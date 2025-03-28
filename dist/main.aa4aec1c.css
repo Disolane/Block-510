@@ -1,0 +1,94 @@
+
+#header{
+    padding: 30px 0;
+    border-bottom: 2px solid red;
+    background: #333;
+    color: #fff
+    
+/* 
+    background-color: #171717; 
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    border-bottom: 4px solid silver;
+    background: #333;
+    color: #fff;
+    line-height: 50px;
+    float: left; */
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    background: #999;
+    border: 1px solid silver;
+/*     float: left; */
+}
+
+#footer{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    border-bottom: 4px solid silver;
+    background: #333;
+    color: #fff;
+    line-height: 50px;
+/*     float: left; */
+}
+
+
+/* mavigation*/
+
+
+
+
+.container{
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+    border: 1px solid silver;
+    row-gap: 20px;
+    
+}
+
+.nav-row{
+    display: flex;
+/*     justify-content: space-between; */
+    align-items:  center;
+    column-gap: 40px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.logo{
+    color: red;
+    text-decoration: none; /* Удаление подчеркивания в ссылках */
+}
+
+.nav-list{
+    padding-left: 0; 
+    display: flex;
+    align-items:  center;
+    column-gap: 40px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-list__item{
+    list-style-type: none;
+    text-decoration: none; /* Удаление подчеркивания в ссылках */
+    color: #fff;
+}
+
+.nav-list__link{
+    text-decoration: none; /* Удаление подчеркивания в ссылках */
+    color: #fff;
+}
+
+.nav-list__link--active{
+    text-decoration: none; /* Удаление подчеркивания в ссылках */
+    color: #fff;
+}
+
+/*# sourceMappingURL=/main.aa4aec1c.css.map */
