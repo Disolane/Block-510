@@ -37,8 +37,8 @@ return(
       <img src={image13} alt="" className="img13" />
       <img src={image14} alt="" className="img14" />
       <img src={image15} alt="" className="img15" />
-      <img src={image6} alt="" className="img16" />
-      <img src={image16} alt="" className="img17" />
+      <img src={image16} alt="" className="img16" />
+      <img src={image17} alt="" className="img17" />
       <img src={image18} alt="" className="img18" />
       <img src={image11} alt="" className="img19" />
       <img src={image13} alt="" className="img20" />
