@@ -13,6 +13,7 @@ border-bottom: 1px solid #FFB9B9;
 background-color: #FFB9B9;
 }
 
+
 .button{
 background-color: #FF7878;
 width: 228px;
@@ -191,4 +192,11 @@ height: 113.2px;
 position:absolute;
 left:264.94px;
 top:772.36px ;
+}
+.img22{
+  width:59.19px;
+  height: 71.25px;
+  position:absolute;
+  left:293.91px;
+  top:751.63px ;
 }

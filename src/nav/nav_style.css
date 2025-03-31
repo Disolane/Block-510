@@ -1,0 +1,213 @@
+nav {
+  width: 1920px;
+  height: 106px;
+  border-bottom: 1px solid #FFB9B9;
+  background-color: #FFB9B9;
+  align-items: center;
+  gap: 20px; 
+}
+
+.nav-button {
+  background-color: #FF7878;
+  width: 228px;
+  height: 106px;
+  border-radius: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.nav-button:hover {
+  background-color: #FF5A5A;
+}
+
+.nav-button img {
+  width: 114px;
+  height: 106px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+}
+
+.body {
+  background-color: #B2B2B2;
+  width: 1920px;
+  height: 974px;
+  position: relative;
+}
+
+.main-container {
+  width: 100%;
+  height: calc(100% - 106px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.central-window {
+  width: 1400px;
+  height: 800px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  display: flex;
+  padding: 20px;
+}
+
+.left-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 0;
+}
+
+.central-window img.Building {
+  width: 800px;
+  height: 760px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.central-window img:not(.Building) {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  min-height: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 1500px) {
+  .central-window {
+    width: 1200px;
+    height: 700px;
+  }
+  .central-window img.Building {
+    height: 700px;
+  }
+}
+
+.card-text{
+  color: #000000;
+}
+
+.central-window .CardBuilding {
+  width: 100%;
+  height: 250px; 
+  background-color: #d78a8a;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.central-window .CardDescription {
+  width: 100%;
+  height: 250px; 
+  background-color: #e4adad;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.central-window .card-text,
+.button-text,
+.sound-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.central-window .CardSound {
+  width: 100%;
+  height: 145px;
+  background-color: #ffcbcb;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sound-control {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.sound-button {
+  background: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+.sound-animation {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Стили для CardButton */
+.central-window .CardButton {
+  width: 100%;
+  height: 179px;
+  background-color: #ecbf8f;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.central-window .CardButton .nav-button {
+  background-color: #FF5A5A;
+  width: 80%;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s;
+}
+
+.central-window .CardButton .nav-button:hover {
+  transform: scale(1.05);
+}

@@ -43,6 +43,7 @@ return(
       <img src={image11} alt="" className="img19" />
       <img src={image13} alt="" className="img20" />
       <img src={image14} alt="" className="img21" />
+      <img src={image17} alt="" className="img22" />
 
 
       </div>
