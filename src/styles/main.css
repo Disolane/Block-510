@@ -13,6 +13,7 @@ border-bottom: 1px solid #FFB9B9;
 background-color: #FFB9B9;
 }
 
+
 .button{
 background-color: #FF7878;
 width: 228px;
@@ -191,4 +192,31 @@ height: 113.2px;
 position:absolute;
 left:264.94px;
 top:859.04px ;
+}
+.fon1{
+width: 1920px;
+height:1080px;
+background-color:#BA9D9D;
+}
+.img22{
+position: relative;
+width: 1619px;
+height:1080px;
+position: absolute;
+left:190px;
+top:107.2px;
+}
+.img23{
+width:1400px;
+height: 924px;
+position: absolute;
+left:260px;
+top:130px;
+}
+.img23, .img24{
+  position: relative;
+}
+.img24{
+top: -800px;
+left: 250px;
 }
