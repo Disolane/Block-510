@@ -6,16 +6,16 @@ const Navbar=()=>{
 return(
       <nav className="nav">
         <div className="container">
-          <button className="button">
+          <button className="button1">
             <span className="text">
               <p>Выбрать</p>
               <p>мероприятие</p>
             </span>
           </button>
-          <button className="button1">
+          <button className="button2">
            <img src={image8} width="114" height="106" alt="" className="img8" />
            </button>
-           <button className="button2">
+           <button className="button3">
            <img src={image9} width="114" height="106" alt="" className="img9" />
          </button>
         </div>
