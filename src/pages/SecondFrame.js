@@ -6,6 +6,7 @@ import image23 from"../img/MainBlock (2).png"
 import image25 from"../img/Group 106.png"
 import image26 from"../img/SoundButton.png"
 import image27 from"../img/Group 108.png"
+import image35 from "../img/PictureOfFirstBuildingForBuldingFrame.png"
 const SecondFrame = () => {
   const [imageSrc, setImageSrc] = useState(image26);
   const handleImageClick = () => {
@@ -22,6 +23,7 @@ const SecondFrame = () => {
   <img src={image23} alt="" className="img23"/>
   <img src={image24} alt="" className="img24"/>
   <img src={image25} alt="" className="img25"/>
+  <img src={image35} alt=''className='img35'/>
   <button onClick={handleImageClick}>
   <img src={imageSrc} alt="" className="img26" />
    </button>

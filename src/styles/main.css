@@ -28,13 +28,6 @@ button.button1:active{
 background-color: #FF4D4D; 
 transform: scale(0.98); 
 }
-button.button2:active
-{transform: scale(0.98); 
-}
-button.button3:active
-{transform: scale(0.98); 
-}
-
 .text{
 font-family: "Inter", sans-serif;
 font-weight:400;
@@ -211,53 +204,62 @@ position:absolute;
 left:264.94px;
 top:859.04px ;
 }
-.fon1{
-width: 100%;
-height:100vh;
-background-color:#BA9D9D;
+.fon1 {
+  background-color: #BA9D9D;
+  position: relative;
+  width:100%;
+  height:100vh;
 }
 .img22{
 position: relative;
 width: 1619px;
-height:1080px;
+height: 1040px;
 position: absolute;
-left:190px;
-top:107.2px;
+left:290px;
+top: 64px;
 }
 .img23{
-width:1400px;
-height: 924px;
+width:1398px;
+height: 918px;
 position: absolute;
-left:260px;
-top:50px;
+left:370px;
+top: 90px;
 }
 .img23, .img24,.img25,.img26{
   position: relative;
 }
 .img24{
-width: 616px;
-height: 300px;;
-top: -875px;
-left: 250px;
+  position: absolute;
+  top: 90px;
+  left:366px;
 }
 .img25{
   width:616px;
   height: 300px;
-  top: -575px;
-  left:-366px;
+  position: absolute;
+  top: 385px;
+  left: 365px;
 }
 .img26{
 width: 616px;
 height:145px;
-top:-274.5px;
-left:-982px;
+position: absolute;
+top: 680px;
+left: 365px;
 }
 .img28{
 position: relative;
+position: absolute;
 width: 616px;
 height:179px; 
-top:-430px;
-left:-500px;
+top: 827px;
+left: 365px;
+}
+.img35{
+  position: relative;
+  position: absolute;
+  top: 90px;
+  left: 983px;
 }
 .modal-overlay {
   position: fixed; 
@@ -302,8 +304,32 @@ left:-500px;
   right: 4px; 
   z-index: 1002;
 }
+.dropdown-menu {
+  width: 235px;
+  max-height: 228px;
+  overflow-y: auto;  
+  border-radius: 15px;
+  background-color: #FF7878;
+  text-align: center;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 106.5px;
+  left: 2px;
+}
 
-.img29{
-width:500px;
-height:350px;
+.dropdown-item {
+  text-align: center;
+  padding: 10px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+.show {
+  display: block !important; 
 }
