@@ -333,3 +333,28 @@ left: 365px;
 .show {
   display: block !important; 
 }
+.button4 {
+  background-color: #A16666;
+  width: 498px;
+  height: 91px;
+  position: absolute;
+  top: 1021px;
+  left: 1.9px;
+  z-index: 100;
+  text-align: center;
+  text-decoration: none;
+  display: flex; 
+  justify-content: center; 
+  padding-bottom: 5px;
+  align-items: center;
+  padding-top: 2px;
+}
+
+.button-text{
+  font-family: "Inter", sans-serif;
+  font-weight:400;
+  font-size:24px;
+  color: #f8f9fa;
+  text-align: center;
+  
+}

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
 import image from "../img/Roads.png";
 import image1 from "../img/SecondBuilding.png";
 import image2 from "../img/FourthyBuilding.png";
@@ -24,12 +23,15 @@ import image30 from "../img/Name.png";
 import image31 from "../img/Description.png";
 import image32 from "../img/Coordinates.png";
 import image33 from "../img/Type.png";
-
+import { Link } from 'react-router-dom';
 const Modal = ({ showModal, onClose, images }) => {
   if (!showModal) return null; 
   return (
     <div className="modal-overlay">
       <div className="modal-content">
+      <Link className="button4" to="second-page">
+  <span className="button-text">Подробнее о корпусе</span>
+</Link>
         <div className="modal-images">
           {images.map((image, index) => (
             <img src={image} alt={`image-${index}`} className="modal-image" key={index} />
@@ -45,17 +47,14 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false); 
   const [selectedImages, setSelectedImages] = useState([]); 
   const [selectedImage, setSelectedImage] = useState(null); 
-  const navigate = useNavigate(); 
+
 
   const handleImageClick = (index) => {
     if (index === 4) {
       const images = [image29, image30, image31, image32, image33];
       setSelectedImages(images);
       setSelectedImage(index);
-      setShowModal(true);
-      setTimeout(() => {
-        navigate('/second-page'); 
-      }, 9000); 
+      setShowModal(true); 
     }
   };
   const handleCloseModal = () => {
