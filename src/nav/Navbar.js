@@ -28,13 +28,13 @@ const Navbar = () => {
           <ul className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`} aria-labelledby="dropdownMenuButton">
 
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
-              <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Мероприятие 1</Link>
+              <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Студ.Весна</Link>
             </li>
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
-              <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Мероприятие 2</Link>
+              <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>День открытых дверей</Link>
             </li>
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
-              <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Мероприятие 3</Link>
+              <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>MathCat</Link>
             </li>
           </ul>
         </div>

@@ -316,10 +316,11 @@ left: 365px;
   top: 106.5px;
   left: 2px;
 }
-
 .dropdown-item {
   text-align: center;
   padding: 10px 20px;
+  display: inline-block;
+  margin-top: 10px;
   font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 400;
