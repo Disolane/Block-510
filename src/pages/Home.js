@@ -106,7 +106,7 @@ const Home = () => {
       <img src={image12} alt="" className="img32" />
       <img src={image13} alt="" className="img33" />
       <img src={image14} alt="" className="img34" />
-      <img src={image15} alt="" className="img35" />
+      <img src={image15} alt="" className="img39" />
       <img src={image16} alt="" className="img36" />
       <img src={image17} alt="" className="img37" />
       <img src={image18} alt="" className="img38" />
