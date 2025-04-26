@@ -34,7 +34,7 @@ font-weight:400;
 font-size:24px;
 width: 158px;
 height: 58px;
-color: #000000;
+color:#F8EBE2;
 padding: 0;
 text-align: center;
 }
@@ -205,19 +205,12 @@ left:264.94px;
 top:859.04px ;
 }
 .fon1 {
-  background-color: #BA9D9D;
+  background-color:#F8EBE2;
   position: relative;
   width:100%;
   height:100vh;
 }
-.img22{
-position: relative;
-width: 1619px;
-height: 1040px;
-position: absolute;
-left:290px;
-top: 64px;
-}
+
 .img23{
 width:1398px;
 height: 918px;
@@ -280,19 +273,26 @@ left: 365px;
   position: relative;
   padding: 20px;
   width: 50%; 
-  max-width: 500px; 
-  height: auto;
+  border-radius:20px;
+  max-width: 498px;
+ max-height:1200px;
   z-index: 1001; 
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); 
 }
+
 .modal-images {
   display: flex;
   position: relative; 
   flex-wrap: wrap;
   justify-content: center;
+  width:498px;
+  height:320px;
+  border-radius:20px ;
+  left: -20px;
+  top:-30px;
 }
 .close-button {
-  color: white;
+  color: #F8EBE2;
   border: none;
   padding: 2px 4px;
   border-radius: 5px;
@@ -315,29 +315,35 @@ left: 365px;
   position: absolute;
   top: 106.5px;
   left: 2px;
+  padding: 0; /* Убираем внутренние отступы, чтобы dropdown-item занимали всю ширину */
 }
+
 .dropdown-item {
+  display: block; /* Заменяем inline-block на block */
   text-align: center;
   padding: 10px 20px;
-  display: inline-block;
   margin-top: 10px;
   font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 400;
-  color: #000000;
+  color: #F8EBE2;
+  width: 100%; /* Занимает всю ширину родителя */
+  box-sizing: border-box; /* Учитываем padding в ширине */
 }
 
 .dropdown-item:hover {
-  background-color: #f8f9fa;
-  color: #007bff;
+  background-color: #FEC6A3;
+  color: #F8EBE2;
 }
+
 .show {
   display: block !important; 
 }
 .button4 {
-  background-color: #A16666;
-  width: 498px;
+  background-color:#FEC6A3;
+  width: 495px;
   height: 91px;
+  border-radius: 20px;
   position: absolute;
   top: 1021px;
   left: 1.9px;
@@ -355,7 +361,51 @@ left: 365px;
   font-family: "Inter", sans-serif;
   font-weight:400;
   font-size:24px;
-  color: #f8f9fa;
+  color: #F8EBE2;
   text-align: center;
   
 }
+.img30{
+  position: absolute;
+  top:520px;
+  left: 270px;
+}
+.img31{
+position: absolute;
+top: 400px;
+left:340px;
+}
+.img32{
+  position: absolute;
+  top: 400px;
+  left: 230px;
+}
+.img33{
+  position: absolute;
+  top: 870px;;
+  left: 150px
+
+}
+.img34{
+  position: absolute;
+  top: 450px;
+  left: 160px; 
+}
+.img35{
+  position: absolute;
+  top: 490px;  
+  left: 350px;
+}
+.img36{
+  position: absolute;
+  top: 490px; 
+  left:500px;
+}
+.img37{
+  position: absolute;
+  top: 870px;
+  left: 280px;  
+}
+.img38{position: absolute;
+  top: 820px;
+  left:370px;  }
