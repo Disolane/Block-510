@@ -90,6 +90,7 @@ const Home = () => {
         onClick={() => handleImageClick(5)} 
       />
       <Modal showModal={showModal} onClose={handleCloseModal} images={selectedImages} />
+      {/*Деревья*/}
       <img src={image6} alt="" className="img6" />
       <img src={image7} alt="" className="img7" />
       <img src={image10} alt="" className="img10" />
@@ -110,7 +111,27 @@ const Home = () => {
       <img src={image16} alt="" className="img36" />
       <img src={image17} alt="" className="img37" />
       <img src={image18} alt="" className="img38" />
-      
+      <img src={image10} alt="" className="img40" />
+      <img src={image11} alt="" className="img41" />
+      <img src={image12} alt="" className="img42" />
+      <img src={image13} alt="" className="img43" />
+      <img src={image14} alt="" className="img44" />
+      <img src={image15} alt="" className="img45" />
+      <img src={image16} alt="" className="img46" />
+      <img src={image17} alt="" className="img47" />
+      <img src={image18} alt="" className="img48" />
+      <img src={image11} alt="" className="img49" />
+      <img src={image11} alt="" className="img50" />
+      <img src={image10} alt="" className="img51" />
+      <img src={image11} alt="" className="img52" />
+      <img src={image12} alt="" className="img53" />
+      <img src={image13} alt="" className="img54" />
+      <img src={image14} alt="" className="img55" />
+      <img src={image15} alt="" className="img56" />
+      <img src={image16} alt="" className="img57" />
+      <img src={image17} alt="" className="img58" />
+      <img src={image18} alt="" className="img59" />
+      <img src={image10} alt="" className="img60" />
     </div>
   );
 }

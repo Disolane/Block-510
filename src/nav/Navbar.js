@@ -1,6 +1,4 @@
 import "../styles/main.css";
-import image8 from "../img/BackFirstButton.png";
-import image9 from "../img/BackSecButt.png";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
@@ -34,16 +32,23 @@ const Navbar = () => {
               <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>День открытых дверей</Link>
             </li>
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
+            <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Я читатель</Link>
+            </li>
+            <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
+            <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Первый снег</Link>
+            </li>
+            <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
               <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>MathCat</Link>
             </li>
           </ul>
         </div>
 
         <Link to="/"  className="button2">
-        <img src={image8} width="114" height="106" alt="" className="img8" />
+         <div className=" text-button2" >
+         Вернуться на главную страницу
+         </div>
         </Link>
         <button className="button3">
-          <img src={image9} width="114" height="106" alt="" className="img9" />
         </button>
       </div>
     </nav>

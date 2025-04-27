@@ -33,7 +33,9 @@ const SecondFrame = () => {
           
         }}
       >
+
   </div>
+  {/* путь для 3- странички*/}
   <Link to="/third-page">
   <img src={image28} alt="" className="img28" />
 </Link>

@@ -8,7 +8,7 @@
   }
 .nav{
 border-bottom: 1px solid #FFB9B9;
-background-color: #FFB9B9;
+background-color: #FFB9B9;/*навигация*/
 }
 
 .container {
@@ -16,7 +16,7 @@ background-color: #FFB9B9;
   gap: 5px; 
 }
 .button1{
-background-color: #FF7878;
+background-color: #FF7878; /* кнопка в навигации*/
 width: 228px;
 height: 106px;
 border-radius: 15px;
@@ -27,6 +27,33 @@ align-items: center;
 button.button1:active{
 background-color: #FF4D4D; 
 transform: scale(0.98); 
+}
+
+.button2 {
+  align-items: center;
+  justify-content: center;
+  background-color:#FF7878;
+  width: 228px;
+  height: 106px;
+  position: absolute;
+  top: 0px;
+  left: 2050px;
+  z-index: 50;
+  border: none;
+  border-radius: 15px; /* Опционально: скругление углов */
+  cursor: pointer;
+  padding: 0;
+}
+
+.text-button2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #F8EBE2;
+  margin: 0; /* Убирает лишние отступы у текста */
+  padding:15px;
+  text-align: center;
+  pointer-events: none; /* Чтобы клик срабатывал по кнопке, а не тексту */
 }
 .text{
 font-family: "Inter", sans-serif;
@@ -39,10 +66,11 @@ padding: 0;
 text-align: center;
 }
 .body{
-background-color:#B2B2B2;
-width: 100%;
+background-color:#B2B2B2;/* цвет фона для 1 страницы*/
+width: 100%; 
 height: 100vh;
 }
+/* деревья и дорога для 1-страницы*/
 .img{
 width:1420.62px;
 height: 843px;
@@ -109,16 +137,7 @@ position: absolute;
 left:1339.41px;
 top:740.44px;
 }
-.img8{
-position:absolute;
-left: 2050px;
-top:0;
-}
-.img9{
-  position:absolute;
-  left: 2160px;
-  top:0px;
-  }
+
 .img10{
 width:54.55px;
 height:54.49px;
@@ -204,6 +223,7 @@ position:absolute;
 left:264.94px;
 top:859.04px ;
 }
+/* Фон и изображения для второй страницы*/
 .fon1 {
   background-color:#F8EBE2;
   position: relative;
@@ -254,6 +274,7 @@ left: 365px;
   top: 90px;
   left: 983px;
 }
+/* Модульное окно*/
 .modal-overlay {
   position: fixed; 
   top: 0;
@@ -266,6 +287,7 @@ left: 365px;
   z-index: 1000; 
   transition: transform 0.3s ease; 
 }
+/* модульное окно для 1-го корпуса*/
 .modal-content {
   background-color:#FFC5C5 ;
   margin: 0;
@@ -304,6 +326,7 @@ left: 365px;
   right: 4px; 
   z-index: 1002;
 }
+/* Выподающий список с мероприятиями*/
 .dropdown-menu {
   width: 235px;
   max-height: 228px;
@@ -315,11 +338,11 @@ left: 365px;
   position: absolute;
   top: 106.5px;
   left: 2px;
-  padding: 0; /* Убираем внутренние отступы, чтобы dropdown-item занимали всю ширину */
+  padding: 0; 
 }
 
 .dropdown-item {
-  display: block; /* Заменяем inline-block на block */
+  display: block; 
   text-align: center;
   padding: 10px 20px;
   margin-top: 10px;
@@ -327,8 +350,8 @@ left: 365px;
   font-size: 24px;
   font-weight: 400;
   color: #F8EBE2;
-  width: 100%; /* Занимает всю ширину родителя */
-  box-sizing: border-box; /* Учитываем padding в ширине */
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
 .dropdown-item:hover {
@@ -339,6 +362,7 @@ left: 365px;
 .show {
   display: block !important; 
 }
+/* Кнопка для модульного окна для 1-го корпуса*/
 .button4 {
   background-color:#FEC6A3;
   width: 495px;
@@ -356,7 +380,7 @@ left: 365px;
   align-items: center;
   padding-top: 2px;
 }
-
+/* Текст кнопки модульного окна*/
 .button-text{
   font-family: "Inter", sans-serif;
   font-weight:400;
@@ -365,6 +389,7 @@ left: 365px;
   text-align: center;
   
 }
+/* Деревья для 1-вой страницы*/
 .img30{
   position: absolute;
   top:520px;
@@ -409,3 +434,111 @@ left:340px;
 .img38{position: absolute;
   top: 820px;
   left:370px;  }
+  .img40{
+  position:absolute;
+  top:370px;
+  left: 620px;
+  }
+  .img41{
+  position:absolute;
+  top: 570px;
+  left: 180px;
+  }
+  .img49{
+  position:absolute;  
+  top:150px;
+  left:580px;
+  }
+  .img50{
+  position: absolute;
+  top:680px;
+  left:160px;
+  }
+  .img48{
+  position: absolute; 
+  top: 410px;
+  left: 1410px;
+  }
+  .img42{
+  position: absolute;
+  top: 200px;
+  left: 1200px; 
+  }
+  .img43{
+  position: absolute;  
+  top:321px;
+  left: 1435px; 
+  }
+  .img44{
+  position: absolute;
+  top:300px;
+  left: 1300px;
+  }
+  .img45{
+  position:absolute;
+  top:400px;
+  left: 1400px;
+  }
+  .img46{
+    position:absolute;
+    top:260px;  
+    left:1385px;
+  }
+  .img47{
+  position:absolute;
+  top: 230px;
+  left:1330px;
+  }
+  .img51{
+position:absolute;
+top:380px;
+left:900px;
+  }
+  .img60{
+  position:absolute;
+  top:375px;  
+  left: 1150px;;
+  }
+  .img52{
+  position: absolute;  
+  top:560px;
+  left:1470px;
+  }
+  .img53{
+    position: absolute;  
+    top:670px;
+    left:1560px;
+   
+  }
+  .img54{
+    position: absolute;  
+    top:870px; 
+    left:900px;
+  }
+  .img55{
+    position: absolute;  
+    top:800px; 
+    left:1030px;  
+  }
+  .img56{
+    position: absolute; 
+    top:700px; 
+    left:1030px;  
+  }
+  .img57{
+    position: absolute; 
+    top:500px; 
+    left:1530px; 
+
+  }
+  .img58{
+    position: absolute; 
+    top:600px; 
+    left:1630px; 
+  }
+  .img59{
+  position: absolute; 
+  top:930px;
+  left: 1000px; 
+
+  }
