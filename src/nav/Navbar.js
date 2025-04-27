@@ -48,8 +48,6 @@ const Navbar = () => {
          Вернуться на главную страницу
          </div>
         </Link>
-        <button className="button3">
-        </button>
       </div>
     </nav>
   );

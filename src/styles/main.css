@@ -29,10 +29,12 @@ background-color: #FF4D4D;
 transform: scale(0.98); 
 }
 
+/*  стили для кнопки  */
 .button2 {
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#FF7878;
+  background-color: #FF7878;
   width: 228px;
   height: 106px;
   position: absolute;
@@ -40,20 +42,29 @@ transform: scale(0.98);
   left: 2050px;
   z-index: 50;
   border: none;
-  border-radius: 15px; /* Опционально: скругление углов */
+  border-radius: 15px;
   cursor: pointer;
   padding: 0;
+  text-decoration: none; /* Убирает подчёркивание у ссылки */
+  color: inherit; /* Наследует цвет текста */
 }
 
+/* Стиль при нажатии */
+.button2:active {
+  background-color: #FF4D4D; 
+  transform: scale(0.98); 
+}
+
+/* Стиль текста внутри кнопки */
 .text-button2 {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 24px;
-  color: #F8EBE2;
-  margin: 0; /* Убирает лишние отступы у текста */
-  padding:15px;
+  padding: 15px;
   text-align: center;
-  pointer-events: none; /* Чтобы клик срабатывал по кнопке, а не тексту */
+  color: #F8EBE2;
+  margin: 0;
+  pointer-events: none; /* Чтобы клик работал по всей кнопке */
 }
 .text{
 font-family: "Inter", sans-serif;
