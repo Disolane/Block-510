@@ -26,7 +26,7 @@ const Navbar = () => {
           <ul className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`} aria-labelledby="dropdownMenuButton">
 
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
-              <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Студ.Весна</Link>
+              <Link className="dropdown-item" to="/event/1" onClick={() => setIsDropdownOpen(false)}>Студ.Весна</Link>
             </li>
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
               <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>День открытых дверей</Link>
@@ -35,10 +35,10 @@ const Navbar = () => {
             <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Я читатель</Link>
             </li>
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
-            <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>Первый снег</Link>
+            <Link className="dropdown-item" to="/event/2" onClick={() => setIsDropdownOpen(false)}>Первый снег</Link>
             </li>
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
-              <Link className="dropdown-item" to="/сabinet" onClick={() => setIsDropdownOpen(false)}>MathCat</Link>
+              <Link className="dropdown-item" to="/event/4" onClick={() => setIsDropdownOpen(false)}>MathCat</Link>
             </li>
           </ul>
         </div>
