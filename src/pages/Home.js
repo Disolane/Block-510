@@ -17,6 +17,10 @@ import image16 from "../img/Tree 07-2.png";
 import image17 from "../img/Tree 07-3.png";
 import image18 from "../img/Tree 08-1.png";
 import image29 from "../img/PictureOfFirstBuildingForBuldingFrame.png";
+import image61 from"../img/Image.png"
+import image62 from"../img/Image (2).png"
+import image63 from"../img/Image (3).png"
+import image64 from"../img/Image (4).png"
 import { Link } from 'react-router-dom';
 const Modal = ({ showModal, onClose, images,buildingData }) => {
   if (!showModal) return null; 
@@ -65,11 +69,11 @@ const Home = () => {
   const handleImageClick = (index) => {
     let images = [];
     switch(index) {
-      case 1: images = [image1]; break;
-      case 2: images = [image2]; break;
-      case 3: images = [image3]; break;
+      case 1: images = [image61]; break;
+      case 2: images = [image62]; break;
+      case 3: images = [image64]; break;
       case 4: images = [image29]; break; // Для FirstBuilding (image4)
-      case 5: images = [image5]; break;
+      case 5: images = [image63]; break;
       default: images = [];  
   };
   // Находим данные здания в базе (если есть)
