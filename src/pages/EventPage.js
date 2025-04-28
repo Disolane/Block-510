@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import "../styles/Event.css"
 
 import img from "../img/Images.png";
 
@@ -29,35 +30,38 @@ const EventPage = () => {
   if (error || !event) return <div style={{ padding: 40 }}>{error || 'Мероприятие не найдено'}</div>;
 
   return (
-    <div style={{ /* стили */ }}>
-      {/* Левая часть: картинка */}
-      <div style={{ flex: '0 0 320px', marginRight: '40px' }}>
-        <img
-          src={`/img/${event.image}`}
-          alt={event.title}
-          style={{ width: '320px', height: 'auto', borderRadius: '16px', boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}
-        />
-      </div>
-  
-      {/* Правая часть: описание */}
-      <div style={{ flex: '1 1 0', background: '#f8f8f8', borderRadius: '16px', padding: '32px', boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
-        <h2 style={{ marginTop: 0 }}>{event.title}</h2>
-        <p style={{ fontSize: '18px', marginBottom: 24 }}>{event.description}</p>
-        <h3 style={{ marginBottom: 8 }}>Место проведения</h3>
-        {event.cabinet && event.cabinet.floor && event.cabinet.floor.building ? (
-          <p>
-            <b>Кабинет:</b> {event.cabinet.name} ({event.cabinet.description})<br/>
-            <b>Этаж:</b> {event.cabinet.floor.name}<br/>
-            <b>Здание:</b> {event.cabinet.floor.building.name}<br/>
-            <b>Адрес:</b> {event.cabinet.floor.building.address}
-          </p>
-        ) : (
-          <p>Данные о месте проведения отсутствуют</p>
-        )}
+    <div className="fon1">
+      <div className="page-wrapper">
+        <div className="event-container">
+          {/* Левая часть: картинка */}
+          <div className="image-container">
+            <img
+              src={`/img/${event.image}`}
+              alt={event.title}
+              className="event-image"
+            />
+          </div>
+
+          {/* Правая часть: описание */}
+          <div className="description-container">
+            <h2>{event.title}</h2>
+            <p className="description-text">{event.description}</p>
+            <h3>Место проведения</h3>
+            {event.cabinet && event.cabinet.floor && event.cabinet.floor.building ? (
+              <p>
+                <b>Кабинет:</b> {event.cabinet.name} ({event.cabinet.description})<br />
+                <b>Этаж:</b> {event.cabinet.floor.name}<br />
+                <b>Здание:</b> {event.cabinet.floor.building.name}<br />
+                <b>Адрес:</b> {event.cabinet.floor.building.address}
+              </p>
+            ) : (
+              <p>Данные о месте проведения отсутствуют</p>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
-  
 };
 
 export default EventPage;
