@@ -119,11 +119,47 @@ app.get('/api/events/:eventId', (req, res) => {
       res.json(eventData);
     });
   });
-  
+  // API для получения информации о корпусе по ID
+app.get('/api/buildings/:buildingId', (req, res) => {
+  const buildingId = req.params.buildingId;
 
+  const query = `
+    SELECT 
+      b.ID as buildingId,
+      b.Name as buildingName,
+      b.Description as buildingDescription,
+      b.Address as buildingAddress,
+      b.Types as buildingTypes,
+      b.Image as buildingImage
+    FROM 
+      Buildings b
+    WHERE 
+      b.ID = ?
+  `;
 
+  db.get(query, [buildingId], (err, row) => {
+    if (err) {
+      console.error('Ошибка запроса:', err.message);
+      return res.status(500).json({ error: 'Ошибка сервера' });
+    }
+    if (!row) {
+      return res.status(404).json({ error: 'Корпус не найден' });
+    }
 
+    // Формируем объект с данными о корпусе
+    const buildingData = {
+      id: row.buildingId,
+      name: row.buildingName,
+      description: row.buildingDescription,
+      address: row.buildingAddress,
+      types: row.buildingTypes,
+      image: row.buildingImage, // Путь к изображению корпуса
 
+    };
+
+    res.json(buildingData);
+  });
+});
 const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`Сервер запущен на порту ${PORT}`);

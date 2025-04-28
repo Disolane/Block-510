@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import image from "../img/Roads.png";
 import image1 from "../img/SecondBuilding.png";
 import image2 from "../img/FourthyBuilding.png";
@@ -22,74 +22,105 @@ import image62 from"../img/Image (2).png"
 import image63 from"../img/Image (3).png"
 import image64 from"../img/Image (4).png"
 import { Link } from 'react-router-dom';
-const Modal = ({ showModal, onClose, images,buildingData }) => {
-  if (!showModal) return null; 
+const Modal = ({ showModal, onClose, images, buildingData, loading, error }) => {
+  if (!showModal) return null;
+
+  if (loading) return <div className="modal-overlay"><div style={{ padding: 40 }}>Загрузка...</div></div>;
+  if (error) return <div className="modal-overlay"><div style={{ padding: 40 }}>{error}</div></div>;
+  if (!buildingData) return <div className="modal-overlay"><div style={{ padding: 40 }}>Данные о корпусе не найдены</div></div>;
+
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-      <Link className="button4" to="second-page">
-  <span className="button-text">Подробнее о корпусе</span>
-</Link>
-{/* Добавляем отображение данных о здании */}
-{buildingData && (
-          <div className="building-info">
-            <h2>{buildingData.name}</h2>
-            <p>{buildingData.description}</p>
-            <p>Адрес: {buildingData.address}</p>
-            <p>Тип: {buildingData.type}</p>
-          </div>
-        )}
-        <div className="modal-images">
-          {images.map((image, index) => (
-            <img src={image} alt={`image-${index}`} className="modal-image" key={index} />
-          ))}
-        </div>
         <button className="close-button" onClick={onClose}>X</button>
+
+        <div className="event-container">
+          {/* Левая часть — изображение */}
+          <div className="image-container">
+            {images && images.length > 0 ? (
+              images.map((imgSrc, index) => (
+                <img
+                  src={imgSrc}
+                  alt={`building-${index}`}
+                  className="event-image"
+                  key={index}
+                />
+              ))
+            ) : (
+              <img
+                src={`/img/${buildingData.image}`} // Путь к изображению из базы
+                alt={buildingData.name}
+                className="event-image"
+              />
+            )}
+          </div>
+
+          {/* Правая часть — текст */}
+          <div className="description-container">
+            <h2>{buildingData.name}</h2>
+            <p className="description-text">{buildingData.description}</p>
+            <h3>Информация</h3>
+            <p>
+              <b>Тип:</b> {buildingData.types || 'Не указан'}<br />
+              <b>Адрес:</b> {buildingData.address || 'Адрес отсутствует'}
+            </p>
+
+            <Link className="button4" to={`/building/${buildingData.id}`}>
+              <span className="button-text">Подробнее о корпусе</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
-
+const API_URL = 'http://localhost:3001/api/buildings';
 const Home = () => {
-  const [showModal, setShowModal] = useState(false); 
-  const [selectedImages, setSelectedImages] = useState([]); 
-  const [selectedImage, setSelectedImage] = useState(null); 
-  const [buildings, setBuildings] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImages, setSelectedImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [selectedBuilding, setSelectedBuilding] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  // Загружаем данные о зданиях при монтировании компонента
-  useEffect(() => {
-    fetch("/api/buildings") 
-      .then(response => response.json())
-      .then(data => setBuildings(data))
-      .catch(error => console.error('Ошибка при загрузке данных:', error));
-  }, []);
-
-
-  const handleImageClick = (index) => {
+  const handleImageClick = async (index) => {
+    // Здесь вы можете заранее определить изображения для каждого здания
     let images = [];
-    switch(index) {
+    switch (index) {
       case 1: images = [image61]; break;
       case 2: images = [image62]; break;
       case 3: images = [image64]; break;
-      case 4: images = [image29]; break; // Для FirstBuilding (image4)
+      case 4: images = [image29]; break;
       case 5: images = [image63]; break;
-      default: images = [];  
-  };
-  // Находим данные здания в базе (если есть)
-  const buildingData = buildings.find(b => b.id === index);
-    
-  setSelectedImages(images);
-  setSelectedImage(index);
-  setSelectedBuilding(buildingData || null); // Может быть null если данные не загрузились
-  setShowModal(true);
-};
+      default: images = [];
+    }
 
-const handleCloseModal = () => {
-  setShowModal(false);
-  setSelectedImage(null);
-  setSelectedBuilding(null);
-};
+    setSelectedImages(images);
+    setSelectedImage(index);
+    setShowModal(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      // Запрос данных о здании по ID (используем index как buildingId)
+      const response = await fetch(`${API_URL}/${index}`);
+      if (!response.ok) throw new Error('Здание не найдено');
+      const data = await response.json();
+      setSelectedBuilding(data); // Устанавливаем данные о здании в состояние
+    } catch (err) {
+      setError(err.message);
+      setSelectedBuilding(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedImage(null);
+    setSelectedBuilding(null);
+    setError(null);
+  };
   return (
     <div className="body">
       <img src={image} alt="" className="img" />
@@ -123,13 +154,16 @@ const handleCloseModal = () => {
         className={`img5 ${selectedImage === 5 ? "highlighted" : ""}`}
         onClick={() => handleImageClick(5)} 
       />
-     {/* Модальное окно */}
-     <Modal 
+      
+      <Modal 
         showModal={showModal} 
         onClose={handleCloseModal} 
         images={selectedImages}
         buildingData={selectedBuilding}
+        loading={loading}
+        error={error}
       />
+      
       {/*Деревья*/}
       <img src={image6} alt="" className="img6" />
       <img src={image7} alt="" className="img7" />

@@ -9,10 +9,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <server />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} /> 
+        <Route path="/" element={<Home />} /> 
           <Route path="/second-page" element={<SecondFrame />} /> 
           <Route path="/third-page" element={<ThirdFrame />} />
           <Route path="/event/:eventId" element={<EventPage />} />
