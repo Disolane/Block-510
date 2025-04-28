@@ -1,9 +1,12 @@
-const sqlite3 = require('sqlite3').verbose(); 
+const sqlite3 = require('sqlite3').verbose();
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+origin: 'http://localhost:3001', 
+methods: ['GET', 'POST']
+  }));
 app.use(express.json());
 
 // Создаем подключение к базе данных
@@ -15,14 +18,6 @@ const db = new sqlite3.Database('./DB_Project.db', sqlite3.OPEN_READWRITE | sqli
     }
 });
 
-
-db.close((err) => {
-    if (err) {
-        console.error('Ошибка при закрытии базы данных: ' + err.message);
-    } else {
-        console.log('Подключение к базе данных закрыто.');
-    }
-});
 // API для получения всех корпусов
 app.get('/api/buildings', (req, res) => {
     db.all('SELECT * FROM Buildings', [], (err, rows) => {

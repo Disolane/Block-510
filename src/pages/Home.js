@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import image from "../img/Roads.png";
 import image1 from "../img/SecondBuilding.png";
 import image2 from "../img/FourthyBuilding.png";
@@ -18,7 +18,7 @@ import image17 from "../img/Tree 07-3.png";
 import image18 from "../img/Tree 08-1.png";
 import image29 from "../img/PictureOfFirstBuildingForBuldingFrame.png";
 import { Link } from 'react-router-dom';
-const Modal = ({ showModal, onClose, images }) => {
+const Modal = ({ showModal, onClose, images,buildingData }) => {
   if (!showModal) return null; 
   return (
     <div className="modal-overlay">
@@ -26,6 +26,15 @@ const Modal = ({ showModal, onClose, images }) => {
       <Link className="button4" to="second-page">
   <span className="button-text">Подробнее о корпусе</span>
 </Link>
+{/* Добавляем отображение данных о здании */}
+{buildingData && (
+          <div className="building-info">
+            <h2>{buildingData.name}</h2>
+            <p>{buildingData.description}</p>
+            <p>Адрес: {buildingData.address}</p>
+            <p>Тип: {buildingData.type}</p>
+          </div>
+        )}
         <div className="modal-images">
           {images.map((image, index) => (
             <img src={image} alt={`image-${index}`} className="modal-image" key={index} />
@@ -41,21 +50,42 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false); 
   const [selectedImages, setSelectedImages] = useState([]); 
   const [selectedImage, setSelectedImage] = useState(null); 
+  const [buildings, setBuildings] = useState([]);
+  const [selectedBuilding, setSelectedBuilding] = useState(null);
+
+  // Загружаем данные о зданиях при монтировании компонента
+  useEffect(() => {
+    fetch("/api/buildings") 
+      .then(response => response.json())
+      .then(data => setBuildings(data))
+      .catch(error => console.error('Ошибка при загрузке данных:', error));
+  }, []);
 
 
   const handleImageClick = (index) => {
-    if (index === 4) {
-      const images = [image29];
-      setSelectedImages(images);
-      setSelectedImage(index);
-      setShowModal(true); 
-    }
+    let images = [];
+    switch(index) {
+      case 1: images = [image1]; break;
+      case 2: images = [image2]; break;
+      case 3: images = [image3]; break;
+      case 4: images = [image29]; break; // Для FirstBuilding (image4)
+      case 5: images = [image5]; break;
+      default: images = [];  
   };
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setSelectedImage(null);
-  };
+  // Находим данные здания в базе (если есть)
+  const buildingData = buildings.find(b => b.id === index);
+    
+  setSelectedImages(images);
+  setSelectedImage(index);
+  setSelectedBuilding(buildingData || null); // Может быть null если данные не загрузились
+  setShowModal(true);
+};
 
+const handleCloseModal = () => {
+  setShowModal(false);
+  setSelectedImage(null);
+  setSelectedBuilding(null);
+};
   return (
     <div className="body">
       <img src={image} alt="" className="img" />
@@ -89,7 +119,13 @@ const Home = () => {
         className={`img5 ${selectedImage === 5 ? "highlighted" : ""}`}
         onClick={() => handleImageClick(5)} 
       />
-      <Modal showModal={showModal} onClose={handleCloseModal} images={selectedImages} />
+     {/* Модальное окно */}
+     <Modal 
+        showModal={showModal} 
+        onClose={handleCloseModal} 
+        images={selectedImages}
+        buildingData={selectedBuilding}
+      />
       {/*Деревья*/}
       <img src={image6} alt="" className="img6" />
       <img src={image7} alt="" className="img7" />
