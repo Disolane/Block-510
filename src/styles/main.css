@@ -289,63 +289,6 @@ left: 365px;
   left: 983px;
 }
 
-
-
-/* Модульное окно*/
-/* 
-.modal-overlay {
-  position: fixed; 
-  top: 0;
-  left: 0; 
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); 
-  display: flex;
-  justify-content: flex-start; 
-  z-index: 1000; 
-  transition: transform 0.3s ease; 
-}
-
-.modal-content {
-  background-color:#FFC5C5 ;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  padding: 20px;
-  width: 50%; 
-  border-radius:20px;
-  max-width: 498px;
- max-height:1200px;
-  z-index: 1001; 
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); 
-}
-
-.modal-images {
-  display: flex;
-  position: relative; 
-  flex-wrap: wrap;
-  justify-content: center;
-  width:498px;
-  height:320px;
-  border-radius:20px ;
-  left: -20px;
-  top:-30px;
-}
-.close-button {
-  color: #F8EBE2;
-  border: none;
-  padding: 2px 4px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-  display: block;
-  position: absolute; 
-  top: -8px;
-  right: 4px; 
-  z-index: 1002;
-} */
-
-
 /* Выподающий список с мероприятиями*/
 .dropdown-menu {
   width: 235px;
@@ -382,33 +325,7 @@ left: 365px;
 .show {
   display: block !important; 
 }
-/* Кнопка для модульного окна для 1-го корпуса*/
-.button4 {
-  background-color:#FEC6A3;
-  width: 495px;
-  height: 91px;
-  border-radius: 20px;
-  position: absolute;
-  top: 1021px;
-  left: 1.9px;
-  z-index: 100;
-  text-align: center;
-  text-decoration: none;
-  display: flex; 
-  justify-content: center; 
-  padding-bottom: 5px;
-  align-items: center;
-  padding-top: 2px;
-}
-/* Текст кнопки модульного окна*/
-.button-text{
-  font-family: "Inter", sans-serif;
-  font-weight:400;
-  font-size:24px;
-  color: #F8EBE2;
-  text-align: center;
-  
-}
+
 /* Деревья для 1-вой страницы*/
 .img30{
   position: absolute;

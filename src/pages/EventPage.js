@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "../styles/Event.css"
 
-import img from "../img/Images.png";
+//import img from "../img/Images.png";
 
 const API_URL = 'http://localhost:3001/api/events'; // Укажи свой адрес API
 

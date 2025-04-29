@@ -17,7 +17,6 @@ import image16 from "../img/Tree 07-2.png";
 import image17 from "../img/Tree 07-3.png";
 import image18 from "../img/Tree 08-1.png";
 import { Link } from 'react-router-dom';
-
 import "../styles/testhome.css"
 
 

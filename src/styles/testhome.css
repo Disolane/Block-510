@@ -1,3 +1,11 @@
+@import "./reset.css";
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  }
+  @supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+  }
 /* Контент модального окна */
 .modal-content {
     background-color: #FFC5C5;
@@ -21,7 +29,7 @@
     left: 0; 
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(44, 42, 42, 0.2); 
     display: flex;
     justify-content: flex-start; 
     z-index: 1000; 
@@ -30,38 +38,31 @@
 
 /* Сегмент с изображением - картинка во всю ширину, без отступов и рамок */
 .image-segment {
-    width: 100%; /* во всю ширину модального окна */
-    padding: 0; /* убираем отступы */
-    margin: 0; /* убираем отступы */
-    border-radius: 0; /* без скруглений */
-    box-shadow: none; /* без теней */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image-segment .modal-images {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    position: static !important;
-    left: auto !important;
-    top: auto !important;
-    height: auto !important;
-    flex-wrap: nowrap !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-  
-  .image-segment .modal-image {
-    width: 100%; /* картинка растягивается во всю ширину */
-    height: auto;
-    border-radius: 0; /* без скруглений */
-    display: block;
-    margin: 0;
-    box-shadow: none;
-  }
+  border-radius: 15px;  
+  width: 100%; /* во всю ширину модального окна */
+  padding: 0; /* убираем отступы */
+  margin: 0; /* убираем отступы */
+  box-shadow: none; /* без теней */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-segment .modal-images {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  height: auto !important;
+  flex-wrap: nowrap !important;
+  border-radius: 15px !important; /* добавляем скругление */
+  box-shadow: none !important;
+  overflow: hidden; /* важно для корректного отображения скругленных углов */
+}
+
+
   
   /* Сегменты с информацией - вертикальное расположение метки и значения */
   .info-segment {
@@ -125,4 +126,32 @@
     top: -8px;
     right: 4px; 
     z-index: 1002;
+  }
+  /* Кнопка для модульного окна*/
+  .button4 {
+    padding: 20px; ;
+    background-color:#FF7878;
+    width: 95%;
+    height: 70px;
+    border-radius: 20px;
+    position: absolute;
+    top: 916px;
+    left:15px;
+    z-index: 100;
+    text-align: center;
+    text-decoration: none;
+    display: flex; 
+    justify-content: center; 
+    padding-bottom: 5px;
+    align-items: center;
+    padding-top: 2px;
+  }
+  /* Текст кнопки модульного окна*/
+  .button-text{
+    font-family: "Inter", sans-serif;
+    font-weight:400;
+    font-size:24px;
+    color: #F8EBE2;
+    text-align: center;
+    
   }
