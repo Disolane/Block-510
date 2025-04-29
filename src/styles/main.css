@@ -6,6 +6,9 @@
   @supports (font-variation-settings: normal) {
   :root { font-family: InterVariable, sans-serif; }
   }
+
+
+
 .nav{
 border-bottom: 1px solid #FFB9B9;
 background-color: #FFB9B9;/*навигация*/
@@ -285,7 +288,11 @@ left: 365px;
   top: 90px;
   left: 983px;
 }
+
+
+
 /* Модульное окно*/
+/* 
 .modal-overlay {
   position: fixed; 
   top: 0;
@@ -298,7 +305,7 @@ left: 365px;
   z-index: 1000; 
   transition: transform 0.3s ease; 
 }
-/* модульное окно для 1-го корпуса*/
+
 .modal-content {
   background-color:#FFC5C5 ;
   margin: 0;
@@ -336,7 +343,9 @@ left: 365px;
   top: -8px;
   right: 4px; 
   z-index: 1002;
-}
+} */
+
+
 /* Выподающий список с мероприятиями*/
 .dropdown-menu {
   width: 235px;

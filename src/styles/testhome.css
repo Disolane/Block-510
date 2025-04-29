@@ -1,0 +1,128 @@
+/* Контент модального окна */
+.modal-content {
+    background-color: #FFC5C5;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+    width: 500px; /* фиксированная ширина */
+    max-height: 90vh; /* максимум по высоте */
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* вертикальный скролл при переполнении */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+/* Модульное окно*/
+.modal-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: flex-start; 
+    z-index: 1000; 
+    transition: transform 0.3s ease; 
+  }
+
+/* Сегмент с изображением - картинка во всю ширину, без отступов и рамок */
+.image-segment {
+    width: 100%; /* во всю ширину модального окна */
+    padding: 0; /* убираем отступы */
+    margin: 0; /* убираем отступы */
+    border-radius: 0; /* без скруглений */
+    box-shadow: none; /* без теней */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-segment .modal-images {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    height: auto !important;
+    flex-wrap: nowrap !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  .image-segment .modal-image {
+    width: 100%; /* картинка растягивается во всю ширину */
+    height: auto;
+    border-radius: 0; /* без скруглений */
+    display: block;
+    margin: 0;
+    box-shadow: none;
+  }
+  
+  /* Сегменты с информацией - вертикальное расположение метки и значения */
+  .info-segment {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* вертикальный стек */
+    gap: 4px; /* небольшой отступ между меткой и значением */
+    align-items: flex-start; /* выравнивание по левому краю */
+  }
+  
+  /* Метка сверху */
+  .info-label {
+    font-weight: 600;
+    color: #333;
+    min-width: auto;
+    text-align: left;
+  }
+  
+  /* Значение снизу */
+  .info-value {
+    color: #555;
+    width: 100%;
+    text-align: left;
+    word-break: break-word;
+    white-space: pre-wrap; /* перенос строк, если есть */
+  }
+  
+  /* Убираем нижний отступ у последнего сегмента */
+  .building-info .info-segment:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Кнопка закрытия */
+  .close-button {
+    color: #F8EBE2;
+    border: none;
+    padding: 2px 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    position: absolute; 
+    top: -8px;
+    right: 4px; 
+    z-index: 1002;
+  }
+
+  .close-button {
+    color: #F8EBE2;
+    border: none;
+    padding: 2px 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    position: absolute; 
+    top: -8px;
+    right: 4px; 
+    z-index: 1002;
+  }
