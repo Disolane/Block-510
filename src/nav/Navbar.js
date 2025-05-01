@@ -38,7 +38,7 @@ const Navbar = () => {
             <Link className="dropdown-item" to="/event/2" onClick={() => setIsDropdownOpen(false)}>Первый снег</Link>
             </li>
             <li style={{ display: isDropdownOpen ? 'block' : 'none' }}>
-              <Link className="dropdown-item" to="/event/:eventId" onClick={() => setIsDropdownOpen(false)}>MathCat</Link>
+            <Link className="dropdown-item" to="/event/:eventId" onClick={() => setIsDropdownOpen(false)}>MathCat</Link>
             </li>
           </ul>
         </div>
