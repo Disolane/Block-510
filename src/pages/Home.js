@@ -74,7 +74,7 @@ const Modal = ({ showModal, onClose, images, buildingData }) => {
   
 
 
-  const TestHome = () => {
+  const Home = () => {
     const [showModal, setShowModal] = useState(false);
     const [selectedImages, setSelectedImages] = useState([]);
     const [selectedBuildingId, setSelectedBuildingId] = useState(null);
@@ -221,4 +221,4 @@ const Modal = ({ showModal, onClose, images, buildingData }) => {
     </div>
   );
 }
-export default TestHome;
+export default Home;

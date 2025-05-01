@@ -1,11 +1,9 @@
 import Navbar from "./nav/Navbar";
-//import Home from "./pages/Home";
 import SecondFrame from "./pages/SecondFrame";
 import ThirdFrame from "./pages/ThirdFrame";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import EventPage from "./pages/EventPage";
-
-import TestHome from "./pages/TestHome";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -13,7 +11,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<TestHome />} /> 
+          <Route path="/" element={<Home />} /> 
           <Route path="/second-page" element={<SecondFrame />} /> 
           <Route path="/third-page" element={<ThirdFrame />} />
           <Route path="/event/:eventId" element={<EventPage />} />
