@@ -8,242 +8,83 @@
   }
 
 
-
-.nav{
-border-bottom: 1px solid #FFB9B9;
-background-color: #FFB9B9;/*навигация*/
-}
-
-.container {
-  display: flex;  
-  gap: 5px; 
-}
-.button1{
-background-color: #FF7878; /* кнопка в навигации*/
-width: 228px;
-height: 106px;
-border-radius: 15px;
-justify-content: center;
-align-items: center;
- transform:translateX(1px) ;
-}
-button.button1:active{
-background-color: #FF4D4D; 
-transform: scale(0.98); 
-}
-
-/*  стили для кнопки  */
-.button2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FF7878;
-  width: 228px;
-  height: 106px;
-  position: absolute;
-  top: 0px;
-  left: 2050px;
-  z-index: 50;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  padding: 0;
-  text-decoration: none; /* Убирает подчёркивание у ссылки */
-  color: inherit; /* Наследует цвет текста */
-}
-
-/* Стиль при нажатии */
-.button2:active {
-  background-color: #FF4D4D; 
-  transform: scale(0.98); 
-}
-
-/* Стиль текста внутри кнопки */
-.text-button2 {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  padding: 15px;
-  text-align: center;
-  color: #F8EBE2;
-  margin: 0;
-  pointer-events: none; /* Чтобы клик работал по всей кнопке */
-}
-.text{
-font-family: "Inter", sans-serif;
-font-weight:400;
-font-size:24px;
-width: 158px;
-height: 58px;
-color:#F8EBE2;
-padding: 0;
-text-align: center;
-}
 .body{
-background-color:#B2B2B2;/* цвет фона для 1 страницы*/
-width: 100%; 
-height: 100vh;
+  background-color:#B2B2B2;/* цвет фона для 1 страницы*/
+  width: 100%; 
+  height: 100vh;
+  }
+
+
+  /* Фон и изображения для второй страницы*/
+  .fon1 {
+    background-color:#F8EBE2;
+    position: relative;
+    width:100%;
+    height:100vh;
+  }
+  
+
+.show {
+  display: block !important; 
 }
+/* Кнопка для модульного окна для 1-го корпуса*/
+.button4 {
+  background-color:#FEC6A3;
+  width: 495px;
+  height: 91px;
+  border-radius: 20px;
+  position: absolute;
+  top: 1021px;
+  left: 1.9px;
+  z-index: 100;
+  text-align: center;
+  text-decoration: none;
+  display: flex; 
+  justify-content: center; 
+  padding-bottom: 5px;
+  align-items: center;
+  padding-top: 2px;
+}
+/* Текст кнопки модульного окна*/
+.button-text{
+  font-family: "Inter", sans-serif;
+  font-weight:400;
+  font-size:24px;
+  color: #F8EBE2;
+  text-align: center;
+  
+}
+
+
+
+
+
 /* деревья и дорога для 1-страницы*/
 .img{
-width:1420.62px;
-height: 843px;
-position: absolute;
-left:216.59px;
-top:165px;
-}
-.img1{
-width: 217px; 
-height: 149px;
-position:absolute;
-left:400px;
-top:290px;
-transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
-.highlighted {
-  transform: scale(1.1); 
-  filter: drop-shadow(0px 0px 15px rgba(0, 191, 255, 0.8));
-  transform-origin: center center; 
-}
-.img2{
-width:219px;
-height:241px;
-position:absolute;
-left:604px;
-top:463.5px;
-transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
-.img3{
-width: 217px; 
-height: 241px;
-position:absolute;
-left:856px;
-top:450px;
-transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
-.img4{
-width:215px;
-height:241px;
-position: absolute;
-left:1115px;
-top:710px;
-transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
-.img5{
- width:328px;
- height: 209px;
- position: absolute;
- left:1416px;
- top: 790px;
- transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-}
-.img6{
-width: 90.68px;
-height: 100.39px;
-position: absolute;
-left:1092.29px;
-top: 575.73px;
-}
-.img7{
-width:54.55px;
-height:54.49px;
-position: absolute;
-left:1339.41px;
-top:740.44px;
-}
+  width:1420.62px;
+  height: 843px;
+  position: absolute;
+  left:216.59px;
+  top:165px;
+  }
+  .img1{
+  width: 217px; 
+  height: 149px;
+  position:absolute;
+  left:400px;
+  top:290px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  }
+  .highlighted {
+    transform: scale(1.1); 
+    filter: drop-shadow(0px 0px 15px rgba(0, 191, 255, 0.8));
+    transform-origin: center center; 
+  }
 
-.img10{
-width:54.55px;
-height:54.49px;
-position:absolute;
-left:446.26px;
-top:767.91px;
-}
-.img11{
-width:55.12px;
-height:107.12px;
-position:absolute;
-left:302.55px;
-top:626.66px ;
-}
-.img12{
-width:55.12px;
-height: 95.08px;
-position:absolute;
-left:422.2px;
-top:638.7px ;
-}
 
-.img13{
-width:90.47px;
-height: 127.65px;
-position:absolute;
-left:1369.63px;
-top:356.7px ;
-}
-.img14{
-width:90.47px;
-height: 113.2px;
-position:absolute;
-left:1495.21px;
-top:371.15px ;
-}
-.img15{
-width:69.85px;
-height: 80.77px;
-position:absolute;
-left:320.01px;
-top:915.28px ;
-}
-.img16{
-width:75.71px;
-height: 97.59px;
-position:absolute;
-left:310px;
-top:820px ;
-}
-.img17{
-width:59.19px;
-height: 71.25px;
-position:absolute;
-left:240px;
-top:938px ;
-}
-.img18{
-width:130.83px;
-height: 127.43px;
-position:absolute;
-left:183.69px;
-top:800px ;
-}
-.img19{
-width:55.12px;
-height: 107.12px;
-position:absolute;
-left:1060.22px;
-top:202px ;
-}
-.img20{
-width:90.47px;
-height: 127.65px;
-position:absolute;
-left:181px;
-top:861px ;
-}
-.img21{
-width:90.47px;
-height: 113.2px;
-position:absolute;
-left:264.94px;
-top:859.04px ;
-}
-/* Фон и изображения для второй страницы*/
-.fon1 {
-  background-color:#F8EBE2;
-  position: relative;
-  width:100%;
-  height:100vh;
-}
+
+
+
 
 .img23{
 width:1398px;
@@ -289,42 +130,195 @@ left: 365px;
   left: 983px;
 }
 
-/* Выподающий список с мероприятиями*/
-.dropdown-menu {
-  width: 235px;
-  max-height: 228px;
-  overflow-y: auto;  
-  border-radius: 15px;
-  background-color: #FF7878;
-  text-align: center;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+.img2{
+  width:219px;
+  height:241px;
+  position:absolute;
+  left:604px;
+  top:463.5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  }
+  .img3{
+  width: 217px; 
+  height: 241px;
+  position:absolute;
+  left:856px;
+  top:450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  }
+  .img4{
+  width:215px;
+  height:241px;
   position: absolute;
-  top: 106.5px;
-  left: 2px;
-  padding: 0; 
+  left:1115px;
+  top:710px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  }
+  .img5{
+   width:328px;
+   height: 209px;
+   position: absolute;
+   left:1416px;
+   top: 790px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  }
+  .img6{
+  width: 90.68px;
+  height: 100.39px;
+  position: absolute;
+  left:1092.29px;
+  top: 575.73px;
+  }
+  .img7{
+  width:54.55px;
+  height:54.49px;
+  position: absolute;
+  left:1339.41px;
+  top:740.44px;
+  }
+  
+  .img10{
+  width:54.55px;
+  height:54.49px;
+  position:absolute;
+  left:446.26px;
+  top:767.91px;
+  }
+  .img11{
+  width:55.12px;
+  height:107.12px;
+  position:absolute;
+  left:302.55px;
+  top:626.66px ;
+  }
+  .img12{
+  width:55.12px;
+  height: 95.08px;
+  position:absolute;
+  left:422.2px;
+  top:638.7px ;
+  }
+  
+  .img13{
+  width:90.47px;
+  height: 127.65px;
+  position:absolute;
+  left:1369.63px;
+  top:356.7px ;
+  }
+  .img14{
+  width:90.47px;
+  height: 113.2px;
+  position:absolute;
+  left:1495.21px;
+  top:371.15px ;
+  }
+  .img15{
+  width:69.85px;
+  height: 80.77px;
+  position:absolute;
+  left:320.01px;
+  top:915.28px ;
+  }
+  .img16{
+  width:75.71px;
+  height: 97.59px;
+  position:absolute;
+  left:310px;
+  top:820px ;
+  }
+  .img17{
+  width:59.19px;
+  height: 71.25px;
+  position:absolute;
+  left:240px;
+  top:938px ;
+  }
+  .img18{
+  width:130.83px;
+  height: 127.43px;
+  position:absolute;
+  left:183.69px;
+  top:800px ;
+  }
+  .img19{
+  width:55.12px;
+  height: 107.12px;
+  position:absolute;
+  left:1060.22px;
+  top:202px ;
+  }
+  .img20{
+  width:90.47px;
+  height: 127.65px;
+  position:absolute;
+  left:181px;
+  top:861px ;
+  }
+  .img21{
+  width:90.47px;
+  height: 113.2px;
+  position:absolute;
+  left:264.94px;
+  top:859.04px ;
+  }
+
+/* Модульное окно*/
+/* 
+.modal-overlay {
+  position: fixed; 
+  top: 0;
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: flex-start; 
+  z-index: 1000; 
+  transition: transform 0.3s ease; 
 }
 
-.dropdown-item {
-  display: block; 
-  text-align: center;
-  padding: 10px 20px;
+.modal-content {
+  background-color:#FFC5C5 ;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding: 20px;
+  width: 50%; 
+  border-radius:20px;
+  max-width: 498px;
+ max-height:1200px;
+  z-index: 1001; 
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.modal-images {
+  display: flex;
+  position: relative; 
+  flex-wrap: wrap;
+  justify-content: center;
+  width:498px;
+  height:320px;
+  border-radius:20px ;
+  left: -20px;
+  top:-30px;
+}
+.close-button {
+  color: #F8EBE2;
+  border: none;
+  padding: 2px 4px;
+  border-radius: 5px;
+  cursor: pointer;
   margin-top: 10px;
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  color: #F8EBE2;
-  width: 100%; 
-  box-sizing: border-box; 
-}
+  display: block;
+  position: absolute; 
+  top: -8px;
+  right: 4px; 
+  z-index: 1002;
+} */
 
-.dropdown-item:hover {
-  background-color: #FEC6A3;
-  color: #F8EBE2;
-}
 
-.show {
-  display: block !important; 
-}
+/* Выподающий список с мероприятиями*/
 
 /* Деревья для 1-вой страницы*/
 .img30{

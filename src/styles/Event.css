@@ -1,3 +1,4 @@
+  
   .page-wrapper {
     display: flex;
     justify-content: center; 
@@ -6,6 +7,7 @@
     padding: 20px;           
     box-sizing: border-box;
   }
+
   .event-container {
     display: flex;
     width: 900px;
@@ -14,7 +16,11 @@
     border-radius: 16px;
     overflow: hidden;
     background-color: #fff;
-    
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    border-radius: 16px; 
+    background-color: #fff;
+    transform: scale(1.8); /* масштаб в 1.5 раза */
+    transform-origin: center center; /* масштабирование относительно центра */
   }
   
   .image-container {
@@ -33,8 +39,7 @@
   
   .description-container {
     flex: 1 1 50%;
-    padding: 40px;
-    background-color: #f8f8f8;
+    background-color: #f3C4BD;
     overflow-y: auto;
     box-sizing: border-box;
   }
@@ -43,8 +48,96 @@
     margin-top: 0;
   }
   
-  .description-text {
-    font-size: 18px;
-    margin-bottom: 24px;
+  .event-info{
+
+    background-color: #F26A6C;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
   }
+
+  .event-info,
+  .location-info {
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* центрируем по горизонтали */
+    justify-content: center; /* при необходимости центрируем и по вертикали */
+    padding-left: 20px;  /* можно убрать или уменьшить, если не нужно */
+    padding-right: 20px; /* для отступов слева и справа */
+    box-sizing: border-box;
+  }
+  
+  .event_title {
+    padding: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 15px 0;
+    color: black;
+  }
+  
+  .description-text {
+    font-size: 24px;
+    margin: 0;
+    color: rgba(17, 14, 14, 0.884);
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .location {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 16px;
+    color: black;
+  }
+  
+  .event_location {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.5;
+    color: rgba(17, 14, 14, 0.884);
+    margin: 0;
+  }
+  
+  @media (max-width: 700px) {
+  .page-wrapper {
+    padding: 10px;
+  }
+
+  .event-container {
+    flex-direction: column; /* вертикальный стек */
+    width: 100vw;
+    height: auto;
+    transform: scale(1); /* убираем масштаб */
+    border-radius: 0;
+  }
+
+  .image-container, .description-container {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .event_title {
+    font-size: 24px;
+    padding: 12px 8px;
+  }
+
+  .description-text {
+    font-size: 16px;
+    padding: 0 8px 16px 8px;
+  }
+
+  .location {
+    font-size: 18px;
+    text-align: center; /* центрируем на мобильных */
+    padding: 0 8px 8px 8px;
+  }
+
+  .event_location {
+    font-size: 16px;
+    padding: 0 8px 16px 8px;
+  }
+}
   

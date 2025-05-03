@@ -19,6 +19,8 @@ import image16 from "../img/Tree 07-2.png";
 import image17 from "../img/Tree 07-3.png";
 import image18 from "../img/Tree 08-1.png";
 import { Link } from 'react-router-dom';
+
+import "../styles/main.css";
 import "../styles/testhome.css"
 
 
@@ -76,7 +78,7 @@ const Modal = ({ showModal, onClose, images, buildingData }) => {
   
 
 
-  const Home = () => {
+  const TestHome = () => {
     const [showModal, setShowModal] = useState(false);
     const [selectedImages, setSelectedImages] = useState([]);
     const [selectedBuildingId, setSelectedBuildingId] = useState(null);
@@ -223,4 +225,4 @@ const Modal = ({ showModal, onClose, images, buildingData }) => {
     </div>
   );
 }
-export default Home;
+export default TestHome;

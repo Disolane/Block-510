@@ -44,19 +44,24 @@ const EventPage = () => {
 
           {/* Правая часть: описание */}
           <div className="description-container">
-            <h2>{event.title}</h2>
-            <p className="description-text">{event.description}</p>
-            <h3>Место проведения</h3>
-            {event.cabinet && event.cabinet.floor && event.cabinet.floor.building ? (
-              <p>
-                <b>Кабинет:</b> {event.cabinet.name} ({event.cabinet.description})<br />
-                <b>Этаж:</b> {event.cabinet.floor.name}<br />
-                <b>Здание:</b> {event.cabinet.floor.building.name}<br />
-                <b>Адрес:</b> {event.cabinet.floor.building.address}
-              </p>
-            ) : (
-              <p>Данные о месте проведения отсутствуют</p>
-            )}
+            <div className="event-info">
+              <h2 className="event_title">{event.title}</h2>
+              <p className="description-text">{event.description}</p>
+            </div>
+            
+            <div className="location-info">
+              <h3 className="location">Место проведения</h3>
+              {event.cabinet && event.cabinet.floor && event.cabinet.floor.building ? (
+                <p className="event_location">
+                  <b>Кабинет:</b> {event.cabinet.name}<br />
+                  <b>Этаж:</b> {event.cabinet.floor.name}<br />
+                  <b>Здание:</b> {event.cabinet.floor.building.name}<br />
+                  <b>Адрес:</b> {event.cabinet.floor.building.address}
+                </p>
+              ) : (
+                <p>Данные о месте проведения отсутствуют</p>
+              )}
+            </div>
           </div>
         </div>
       </div>
