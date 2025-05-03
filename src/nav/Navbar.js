@@ -1,5 +1,5 @@
 import "../styles/Navbar.css";
-
+import "../styles/main.css";
 
 /* import 'bootstrap/dist/js/bootstrap.bundle.min.js'; */
 import { Link } from 'react-router-dom';
