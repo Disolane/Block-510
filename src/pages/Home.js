@@ -28,8 +28,8 @@ const Modal = ({ showModal, onClose, images, buildingData }) => {
     return (
       <div className="modal-overlay">
         <div className="modal-content">
-          <Link className="button4" to="second-page">
-            <span className="button-text">Подробнее о корпусе</span>
+          <Link className="button4" to="/third-page">
+            <span className="button-text">Перейти к выбору этажа</span>
           </Link>
   
           <div className="image-segment">  {/* Оборачиваем в новый контейнер */}

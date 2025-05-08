@@ -1,6 +1,4 @@
 
-
-
 .body{
   background-color:#B2B2B2;/* цвет фона для 1 страницы*/
   width: 100%; 
@@ -73,55 +71,6 @@
     filter: drop-shadow(0px 0px 15px rgba(0, 191, 255, 0.8));
     transform-origin: center center; 
   }
-
-
-
-
-
-
-.img23{
-width:1398px;
-height: 918px;
-position: absolute;
-left:370px;
-top: 90px;
-}
-.img23, .img24,.img25,.img26{
-  position: relative;
-}
-.img24{
-  position: absolute;
-  top: 90px;
-  left:366px;
-}
-.img25{
-  width:616px;
-  height: 300px;
-  position: absolute;
-  top: 385px;
-  left: 365px;
-}
-.img26{
-width: 616px;
-height:145px;
-position: absolute;
-top: 680px;
-left: 365px;
-}
-.img28{
-position: relative;
-position: absolute;
-width: 616px;
-height:179px; 
-top: 827px;
-left: 365px;
-}
-.img35{
-  position: relative;
-  position: absolute;
-  top: 90px;
-  left: 983px;
-}
 
 .img2{
   width:219px;
