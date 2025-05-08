@@ -1,5 +1,3 @@
-
-
 import React, { useState,useEffect } from 'react';
 import image from "../img/Roads.png";
 import image1 from "../img/SecondBuilding.png";
@@ -19,6 +17,8 @@ import image16 from "../img/Tree 07-2.png";
 import image17 from "../img/Tree 07-3.png";
 import image18 from "../img/Tree 08-1.png";
 import { Link } from 'react-router-dom';
+
+import "../styles/main.css";
 import "../styles/testhome.css"
 
 
