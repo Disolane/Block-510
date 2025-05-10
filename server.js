@@ -160,6 +160,47 @@ app.get('/api/buildings/:buildingId', (req, res) => {
     res.json(buildingData);
   });
 });
+// API для получения списка этажей по ID корпуса
+app.get('/api/buildings/:buildingId/floors', (req, res) => {
+  const buildingId = req.params.buildingId;
+
+  const query = `
+    SELECT 
+      f.ID as floorId,
+      f.BuildingID as buildingId,
+      f.Numb as floorNumber,
+      f.Image as floorImage,
+      f.Description as floorDescription
+    FROM 
+      Floors f
+    WHERE 
+      f.BuildingID = ?
+    ORDER BY
+      f.Numb ASC
+  `;
+
+  db.all(query, [buildingId], (err, rows) => {
+    if (err) {
+      console.error('Ошибка запроса:', err.message);
+      return res.status(500).json({ error: 'Ошибка сервера' });
+    }
+    if (!rows || rows.length === 0) {
+      return res.status(404).json({ error: 'Этажи для данного корпуса не найдены' });
+    }
+
+    // Формируем массив с данными о этажах
+    const floorsData = rows.map(row => ({
+      id: row.floorId,
+      buildingId: row.buildingId,
+      number: row.floorNumber,
+      image: row.floorImage, // Путь к изображению этажа
+      description: row.floorDescription
+    }));
+
+    res.json(floorsData);
+  });
+});
+
 const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`Сервер запущен на порту ${PORT}`);
