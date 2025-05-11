@@ -39,24 +39,26 @@ const TestFloor = () => {
   if (!floor) return <div className="error">Этаж не найден</div>;
 
     return (
-        <div className="floor-page-wrapper">
-            <div className="floor-title-container">
-                <h1 className="floor-title">{floor.number ? `Этаж №${floor.number}` : 'Этаж'}</h1>
-            </div>
+        <div className="fon1">
+            <div className="floor-page-wrapper">
+                <div className="floor-title-container">
+                    <h1 className="floor-title">{floor.number ? `Этаж №${floor.number}` : 'Этаж'}</h1>
+                </div>
 
-            <div className="floor-description-container">
-                <p className="floor-description">{floor.description}</p>
-            </div>
+                <div className="floor-description-container">
+                    <p className="floor-description">{floor.description}</p>
+                </div>
 
-            <div className="floor-image-container">
-                <img 
-                    src={`/img/${floor.image}`} 
-                    alt={`Этаж №${floor.number}`} 
-                    className="floor-image"
-                />
-            </div>
+                <div className="floor-image-container">
+                    <img 
+                        src={`/img/${floor.image}`} 
+                        alt={`Этаж №${floor.number}`} 
+                        className="floor-image"
+                    />
+                </div>
 
-            <button onClick={() => navigate(-1)} className="back-button">Назад</button>
+                <button onClick={() => navigate(-1)} className="back-button">Назад</button>
+            </div>
         </div>
     );
 

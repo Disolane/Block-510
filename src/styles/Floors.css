@@ -68,15 +68,20 @@
 
 /* Стили для конкретного этажа */
 
+.fon1{
+  padding: 30px 20px;
+}
+
+
 .floor-page-wrapper {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 0px auto;
   padding: 30px 20px;
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  
   display: flex;
   flex-direction: column;
 }
@@ -115,7 +120,7 @@
 }
 
 .floor-description {
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   color: #3a3a3a;
   line-height: 1.6;
   margin: 0;
@@ -153,7 +158,8 @@
   margin-top: 30px;
   padding: 12px 28px;
   font-size: 1.1rem;
-  background-color: #1976d2;
+  /* background-color: #1976d2; */
+  background-color: #f26a6c;
   color: white;
   border: none;
   border-radius: 8px;
