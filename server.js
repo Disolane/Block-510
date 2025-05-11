@@ -119,6 +119,31 @@ app.get('/api/events/:eventId', (req, res) => {
       res.json(eventData);
     });
   });
+
+
+app.get('/api/floors/:floorId', (req, res) => {
+  const floorId = req.params.floorId;
+  const query = `SELECT * FROM Floors WHERE ID = ?`;
+  db.get(query, [floorId], (err, row) => {
+    if (err) {
+      console.error('Ошибка запроса:', err.message);
+      return res.status(500).json({ error: 'Ошибка сервера' });
+    }
+    if (!row) {
+      return res.status(404).json({ error: 'Этаж не найден' });
+    }
+    res.json({
+      id: row.ID,
+      buildingId: row.BuildingID,
+      number: row.Numb,
+      image: row.Image,
+      description: row.Description
+    });
+  });
+});
+
+
+
   // API для получения информации о корпусе по ID
 app.get('/api/buildings/:buildingId', (req, res) => {
   const buildingId = req.params.buildingId;
@@ -156,6 +181,7 @@ app.get('/api/buildings/:buildingId', (req, res) => {
       image: row.buildingImage, // Путь к изображению корпуса
 
     };
+    console.log('buildingName from API:', buildingData.name);
 
     res.json(buildingData);
   });
@@ -178,6 +204,7 @@ app.get('/api/buildings/:buildingId/floors', (req, res) => {
     ORDER BY
       f.Numb ASC
   `;
+
 
   db.all(query, [buildingId], (err, rows) => {
     if (err) {

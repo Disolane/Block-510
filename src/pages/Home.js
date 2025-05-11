@@ -28,9 +28,16 @@ const Modal = ({ showModal, onClose, images, buildingData }) => {
     return (
       <div className="modal-overlay">
         <div className="modal-content">
-          <Link className="button4" to="/third-page">
-            <span className="button-text">Перейти к выбору этажа</span>
-          </Link>
+          
+          {buildingData && (
+            <Link 
+              className="button4" 
+              to={`/building/${buildingData.id || buildingData.ID}`} // <-- динамический путь
+              onClick={onClose} // закрываем модалку при переходе
+            >
+              <span className="button-text">Перейти к выбору этажа</span>
+            </Link>
+          )}
   
           <div className="image-segment">  {/* Оборачиваем в новый контейнер */}
             <div className="modal-images">

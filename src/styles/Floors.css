@@ -1,0 +1,192 @@
+.floors-page {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.building-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.floors-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.floor-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.floor-card:hover {
+  transform: translateY(-5px);
+}
+
+.floor-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.floor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floor-info {
+  padding: 20px;
+}
+
+.floor-number {
+  margin: 0 0 10px 0;
+  color: #444;
+}
+
+.floor-description {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 24px;
+  padding: 40px;
+}
+
+.error {
+  color: #ff4444;
+}
+
+/* Стили для конкретного этажа */
+
+.floor-page-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.floor-title-container,
+.floor-description-container,
+.floor-image-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* Заголовок */
+.floor-title-container {
+  background-color: #f26a6c;
+  padding: 25px 15px;
+  border-radius: 12px 12px 0 0;
+  text-align: center;
+}
+
+.floor-title {
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Описание */
+.floor-description-container {
+  background-color: #f3c4bd;
+  padding: 25px 20px;
+  border-radius: 0 0 12px 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.floor-description {
+  font-size: 1.2rem;
+  color: #3a3a3a;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.floor-image-container {
+  width: 100%; 
+  height: auto;   
+  max-width: 700px; 
+  margin: 20px auto 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 12px;
+  overflow: visible;    
+}
+
+
+
+/* Изображение */
+.floor-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+
+/* Кнопка назад */
+.back-button {
+  margin-top: 30px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  user-select: none;
+  align-self: center;
+  width: auto;
+}
+
+
+.back-button:hover {
+  background-color: #115293;
+}
+
+.back-button:active {
+  background-color: #0d3c6e;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+  .floor-title {
+    font-size: 2rem;
+  }
+
+  .floor-description {
+    font-size: 1rem;
+  }
+
+  .back-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+

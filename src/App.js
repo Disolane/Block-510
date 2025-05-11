@@ -1,5 +1,7 @@
 import Navbar from "./nav/Navbar";
 //import ThirdFrame from "./pages/ThirdFrame";
+import TestFloor from './pages/TestFloor';
+
 import TestThirdFrame from "./pages/TestThirdFrame";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import EventPage from "./pages/EventPage";
@@ -11,7 +13,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} /> 
-          <Route path="/third-page" element={<TestThirdFrame/>} />
+          {/* <Route path="/third-page" element={<TestThirdFrame/>} /> */}
+          <Route path="/building/:buildingId" element={<TestThirdFrame />} />
+          <Route path="/floor/:floorId" element={<TestFloor />} />
           <Route path="/event/:eventId" element={<EventPage />} />
         </Routes>
       </div>
