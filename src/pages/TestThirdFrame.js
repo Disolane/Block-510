@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import "../styles/Floors.css";
-
 const TestThirdFrame = () => {
   const { buildingId } = useParams();
 
   const [floors, setFloors] = useState([]);
   const [buildingName, setBuildingName] = useState('');
+  const [buildingImage, setBuildingImage] = useState(''); // Добавлено состояние для изображения
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -38,8 +38,10 @@ const TestThirdFrame = () => {
 
         // Используем правильные ключи с учётом регистра
         const name = buildingData.Name; // с большой буквы!
+        const image = buildingData.Image; // сохраняем изображение в состоянии
 
         setBuildingName(name || `Корпус №${buildingId}`);
+        setBuildingImage(image || ''); // Устанавливаем изображение
         setLoading(false);
       })
       .catch(err => {
@@ -70,11 +72,13 @@ const TestThirdFrame = () => {
             onClick={() => handleFloorClick(floor.id)}
           >
             <div className="floor-image-container">
-              <img 
-                src={`/img/${floor.image}`} 
-                alt={`Этаж №${floor.number}`} 
-                className="floor-image"
-              />
+              {buildingImage && (
+                <img 
+                  src={`/img/${buildingImage}`} 
+                  alt={`Этаж №${floor.number}`} 
+                  className="floor-image"
+                />
+              )}
             </div>
             
             <div className="floor-info">
