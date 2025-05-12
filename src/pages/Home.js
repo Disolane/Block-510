@@ -215,7 +215,11 @@ const Modal = ({ showModal, onClose, images, buildingData }) => {
       <img src={image16} alt="" className="img46" />
       <img src={image17} alt="" className="img47" />
       <img src={image18} alt="" className="img48" />
-      <img src={image11} alt="" className="img49" />
+
+      <a href="https://youtu.be/dQw4w9WgXcQ?si=oGp91LownfpBoKHx" target="_blank">
+        <img src={image11} alt="Дерево" className="img49"/>
+      </a>
+ {/*      <img src={image11} alt="" className="img49" /> */}
       <img src={image11} alt="" className="img50" />
       <img src={image10} alt="" className="img51" />
       <img src={image11} alt="" className="img52" />
