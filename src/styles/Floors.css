@@ -18,10 +18,10 @@
 }
 
 .floor-card {
-  background:#f3c4bd;
+  background: #f3c4bd;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -31,16 +31,18 @@
 }
 
 .floor-image-container {
-  height: 200px; 
+  height: 200px;
   overflow: hidden;
   background: transparent;
 }
 
 .floor-image {
   width: 100%;
-  height: calc(100% + 20px); /* Компенсирует смещение */
+  height: calc(100% + 20px);
+  /* Компенсирует смещение */
   object-fit: cover;
-  margin-top: -20px; /* Вместо position: relative */
+  margin-top: -20px;
+  /* Вместо position: relative */
 }
 
 .floor-info {
@@ -58,7 +60,8 @@
   line-height: 1.5;
 }
 
-.loading, .error {
+.loading,
+.error {
   text-align: center;
   font-size: 24px;
   padding: 40px;
@@ -70,7 +73,7 @@
 
 /* Стили для конкретного этажа */
 
-.fon1{
+.fon1 {
   padding: 30px 20px;
 }
 
@@ -83,11 +86,10 @@
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
+
   display: flex;
   flex-direction: column;
 }
-
 
 .floor-title-container,
 .floor-description-container,
@@ -96,13 +98,18 @@
   box-sizing: border-box;
 }
 
-
 /* Заголовок */
 .floor-title-container {
   background-color: #f26a6c;
-  padding: 25px 15px;
+  width: calc(100% + 39px);
+  padding: 15px 15px;
   border-radius: 12px 12px 0 0;
   text-align: center;
+  margin: 0;
+  position: relative;
+  top: -29.8px;
+  left: -19px;
+
 }
 
 .floor-title {
@@ -110,15 +117,21 @@
   font-size: 2.8rem;
   font-weight: 700;
   color: white;
+
 }
 
 /* Описание */
 .floor-description-container {
   background-color: #f3c4bd;
-  padding: 25px 20px;
+  padding: 15px 20px;
   border-radius: 0 0 12px 12px;
-  margin-top: 10px;
+  margin-top: 0;
+  width: calc(100% + 39px);
+  box-sizing: border-box;
   text-align: center;
+  position: relative;
+  top: -30px;
+  left: -19px;
 }
 
 .floor-description {
@@ -129,10 +142,23 @@
   white-space: pre-wrap;
 }
 
+/* Изображение */
 .floor-image-container {
-  width: 100%; 
-  height: auto;   
-  max-width: 700px; 
+  max-width: 700px;
+  margin: 10px auto 0 auto;
+  /* Уменьшил margin-top с 20px до 10px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  border-radius: 12px;
+  overflow: visible;
+}
+
+.floor-image-container {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
   margin: 20px auto 0 auto;
   margin-top: 20px;
   display: flex;
@@ -140,7 +166,7 @@
   align-items: center;
   background-color: #eee;
   border-radius: 12px;
-  overflow: visible;    
+  overflow: visible;
 }
 
 
@@ -196,5 +222,3 @@
     font-size: 1rem;
   }
 }
-
-
