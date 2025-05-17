@@ -1,5 +1,4 @@
 import Navbar from "./nav/Navbar";
-//import ThirdFrame from "./pages/ThirdFrame";
 import TestFloor from './pages/TestFloor';
 
 import TestThirdFrame from "./pages/TestThirdFrame";
@@ -12,7 +11,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} /> 
+          <Route path="/" element={<Home />} />
           <Route path="/building/:buildingId" element={<TestThirdFrame />} />
           <Route path="/floor/:floorId" element={<TestFloor />} />
           <Route path="/event/:eventId" element={<EventPage />} />
