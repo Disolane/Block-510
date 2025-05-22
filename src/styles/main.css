@@ -1,364 +1,333 @@
+/* Пример перевода координат и размеров из px в % относительно 1700x1000 контейнера */
+/* Формула: left% = (left_px / 1420) * 100%, top% = (top_px / 850) * 100% */
+/* width% = (width_px / 1420) * 100%, height% = (height_px / 850) * 100% */
+@import "./reset.css";
+
 .body {
   background-color: #B2B2B2;
-  /* цвет фона для 1 страницы*/
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Фон для второй страницы */
+.fon1 {
+  background-color: #F8EBE2;
+  position: relative;
   width: 100%;
   height: 100vh;
 }
 
-/* деревья и дорога для 1-страницы*/
-.img {
-  width: 1420.62px;
-  height: 843px;
-  position: absolute;
-  left: 216.59px;
-  top: 165px;
+/* Основной контейнер для адаптивности */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.img1 {
-  width: 217px;
-  height: 149px;
+/* Основное изображение (деревья и дорога) */
+.img {
+  width: 83.57vw;
+  /* 1420.62/1700*100 */
+  height: 75.59vh;
+  /* 843/1700*100 */
   position: absolute;
-  left: 400px;
-  top: 290px;
+  left: 12.74vw;
+  /* 216.59/1700*100 */
+  top: 9.71vh;
+  /* 165/1700*100 */
+}
+
+/* Общие стили для всех изображений */
+[class^="img"] {
+  position: absolute;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* Специфичные изображения */
+.img1 {
+  width: 12.76vw;
+  /* 217/1700*100 */
+  height: 11.76vh;
+  /* 149/1700*100 */
+  left: 23.53vw;
+  /* 400/1700*100 */
+  top: 22.36vh;
+  /* 290/1700*100 */
 }
 
 .highlighted {
   transform: scale(1.1);
-  filter: drop-shadow(0px 0px 15px rgba(0, 191, 255, 0.8));
+  filter: drop-shadow(0px 0px 0.88vw rgba(0, 191, 255, 0.8));
   transform-origin: center center;
 }
 
 .img2 {
-  width: 219px;
-  height: 241px;
-  position: absolute;
-  left: 604px;
-  top: 463.5px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  width: 11vw;
+  height: 19.18vh;
+  left: 36.53vw;
+  top: 39.26vh;
 }
 
 .img3 {
-  width: 217px;
-  height: 241px;
-  position: absolute;
-  left: 856px;
-  top: 450px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  width: 11.76vw;
+  height: 19.18vh;
+  left: 50.35vw;
+  top: 38.76vh;
 }
 
 .img4 {
-  width: 215px;
-  height: 241px;
-  position: absolute;
-  left: 1115px;
-  top: 710px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  width: 10.65vw;
+  height: 20.18vh;
+  left: 67.59vw;
+  top: 56vh;
 }
 
 .img5 {
-  width: 328px;
-  height: 209px;
-  position: absolute;
-  left: 1416px;
-  top: 790px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  width: 12vw;
+  height: 19.18vh;
+  left: 83.29vw;
+  top: 62.47vh;
 }
 
+/* Деревья и другие элементы */
 .img6 {
-  width: 90.68px;
-  height: 100.39px;
-  position: absolute;
-  left: 1092.29px;
-  top: 575.73px;
+  width: 5.33vw;
+  height: 9.9vh;
+  left: 64.25vw;
+  top: 45.87vh;
 }
 
 .img7 {
-  width: 54.55px;
-  height: 54.49px;
-  position: absolute;
-  left: 1339.41px;
-  top: 740.44px;
+  width: 3.21vw;
+  height: 5.21vh;
+  left: 78.79vw;
+  top: 60.56vh;
+}
+
+/* Медиазапросы для адаптации под разные экраны */
+@media (max-width: 1200px) {
+  .img {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+
+  [class^="img"] {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+}
+
+@media (max-width: 768px) {
+  .img {
+    transform: scale(0.6);
+  }
+
+  [class^="img"] {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 480px) {
+  .img {
+    transform: scale(0.4);
+  }
+
+  [class^="img"] {
+    transform: scale(0.4);
+  }
 }
 
 .img10 {
-  width: 54.55px;
-  height: 54.49px;
-  position: absolute;
-  left: 446.26px;
-  top: 767.91px;
+  width: 3.21vw;
+  height: 5.21vh;
+  left: 26.25vw;
+  top: 62.17vh;
 }
 
 .img11 {
-  width: 55.12px;
-  height: 107.12px;
-  position: absolute;
-  left: 302.55px;
-  top: 626.66px;
+  width: 3.24vw;
+  height: 9.3vh;
+  left: 20.8vw;
+  top: 47.86vh;
 }
 
 .img12 {
-  width: 55.12px;
-  height: 95.08px;
-  position: absolute;
-  left: 422.2px;
-  top: 638.7px;
+  width: 3.24vw;
+  height: 9.59vh;
+  left: 26.84vw;
+  top: 48.57vh;
 }
 
 .img13 {
-  width: 90.47px;
-  height: 127.65px;
-  position: absolute;
-  left: 1369.63px;
-  top: 356.7px;
+  width: 5.32vw;
+  height: 9.51vh;
+  left: 62.57vw;
+  top: 59.98vh;
 }
 
 .img14 {
-  width: 90.47px;
-  height: 113.2px;
-  position: absolute;
-  left: 1495.21px;
-  top: 371.15px;
+  width: 5.32vw;
+  height: 9.66vh;
+  left: 53.75vw;
+  top: 65.83vh;
 }
 
 .img15 {
-  width: 69.85px;
-  height: 80.77px;
-  position: absolute;
-  left: 320.01px;
-  top: 915.28px;
+  width: 4.11vw;
+  height: 9.75vh;
+  left: 18.82vw;
+  top: 63.84vh;
 }
 
 .img16 {
-  width: 75.71px;
-  height: 97.59px;
-  position: absolute;
-  left: 310px;
-  top: 820px;
+  width: 4.45vw;
+  height: 9.74vh;
+  left: 25.24vw;
+  top: 69.24vh;
 }
 
 .img17 {
-  width: 59.19px;
-  height: 71.25px;
-  position: absolute;
-  left: 240px;
-  top: 938px;
+  width: 3.48vw;
+  height: 9.19vh;
+  left: 20.12vw;
+  top: 72.18vh;
 }
 
 .img18 {
-  width: 130.83px;
-  height: 127.43px;
-  position: absolute;
-  left: 183.69px;
-  top: 800px;
+  width: 5.7vw;
+  height: 9.5vh;
+  left: 21.81vw;
+  top: 65.06vh;
 }
 
 .img19 {
-  width: 55.12px;
-  height: 107.12px;
-  position: absolute;
-  left: 1060.22px;
-  top: 202px;
+  width: 3.24vw;
+  height: 9.3vh;
+  left: 22.37vw;
+  top: 55vh;
 }
 
-.img20 {
-  width: 90.47px;
-  height: 127.65px;
-  position: absolute;
-  left: 181px;
-  top: 861px;
-}
 
-.img21 {
-  width: 90.47px;
-  height: 113.2px;
-  position: absolute;
-  left: 264.94px;
-  top: 859.04px;
-}
-
-/* Деревья для 1-вой страницы*/
+/* Деревья для первой страницы */
 .img30 {
-  position: absolute;
-  top: 520px;
-  left: 270px;
+  width: 3.2vw;
+  height: 5vh;
+  left: 15.88vw;
+  top: 30.59vh;
 }
 
 .img31 {
-  position: absolute;
-  top: 400px;
-  left: 340px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 30vw;
+  top: 57.53vh;
 }
 
 .img32 {
-  position: absolute;
-  top: 400px;
-  left: 230px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 23.53vw;
+  top: 53.53vh;
 }
 
 .img33 {
-  position: absolute;
-  top: 870px;
-  ;
-  left: 150px
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 37.82vw;
+  top: 59.18vh;
 }
 
 .img34 {
-  position: absolute;
-  top: 450px;
-  left: 160px;
-}
-
-.img39 {
-  position: absolute;
-  top: 490px;
-  left: 350px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 37.41vw;
+  top: 70.47vh;
 }
 
 .img36 {
-  position: absolute;
-  top: 490px;
-  left: 500px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 59.59vw;
+  top: 68.82vh;
 }
 
 .img37 {
-  position: absolute;
-  top: 870px;
-  left: 280px;
+  width: 3.2vw;
+  height: 9.2vh;
+  left: 16.76vw;
+  top: 37.18vh;
 }
 
 .img38 {
-  position: absolute;
-  top: 820px;
-  left: 370px;
+  width: 5.2vw;
+  height: 9.5vh;
+  left: 22.29vw;
+  top: 72.54vh;
+}
+
+.img39 {
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 32vw;
+  top: 62.82vh;
 }
 
 .img40 {
-  position: absolute;
-  top: 370px;
-  left: 620px;
+  width: 3.2vw;
+  height: 4.5vh;
+  left: 18.88vw;
+  top: 57.76vh;
 }
 
 .img41 {
-  position: absolute;
-  top: 570px;
-  left: 180px;
-}
-
-.img49 {
-  position: absolute;
-  top: 150px;
-  left: 580px;
-}
-
-.img50 {
-  position: absolute;
-  top: 680px;
-  left: 160px;
-}
-
-.img48 {
-  position: absolute;
-  top: 410px;
-  left: 1410px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 23.79vw;
+  top: 35.53vh;
 }
 
 .img42 {
-  position: absolute;
-  top: 200px;
-  left: 1200px;
+  width: 3.2vw;
+  height: 9.5vh;
+  left: 43.41vw;
+  top: 69.76vh;
 }
 
 .img43 {
-  position: absolute;
-  top: 321px;
-  left: 1435px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 60.81vw;
+  top: 35.88vh;
 }
 
 .img44 {
-  position: absolute;
-  top: 300px;
-  left: 1300px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 52.94vw;
+  top: 17.65vh;
 }
 
 .img45 {
-  position: absolute;
-  top: 400px;
-  left: 1400px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 65.24vw;
+  top: 22.53vh;
 }
 
 .img46 {
-  position: absolute;
-  top: 260px;
-  left: 1385px;
+  width: 3.7vw;
+  height: 9.5vh;
+  left: 50.65vw;
+  top: 25.29vh;
 }
 
 .img47 {
-  position: absolute;
-  top: 230px;
-  left: 1330px;
-}
-
-.img51 {
-  position: absolute;
-  top: 380px;
-  left: 900px;
-}
-
-.img60 {
-  position: absolute;
-  top: 375px;
-  left: 1150px;
-  ;
-}
-
-.img52 {
-  position: absolute;
-  top: 560px;
-  left: 1470px;
-}
-
-.img53 {
-  position: absolute;
-  top: 670px;
-  left: 1560px;
-
-}
-
-.img54 {
-  position: absolute;
-  top: 870px;
-  left: 900px;
-}
-
-.img55 {
-  position: absolute;
-  top: 800px;
-  left: 1030px;
-}
-
-.img56 {
-  position: absolute;
-  top: 700px;
-  left: 1030px;
-}
-
-.img57 {
-  position: absolute;
-  top: 500px;
-  left: 1530px;
-
-}
-
-.img58 {
-  position: absolute;
-  top: 600px;
-  left: 1630px;
-}
-
-.img59 {
-  position: absolute;
-  top: 930px;
-  left: 1000px;
-
+  width: 3.2vw;
+  height: 9.5vh;
+  left: 54.71vw;
+  top: 23.53vh;
 }
