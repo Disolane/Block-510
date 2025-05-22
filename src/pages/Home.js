@@ -157,78 +157,76 @@ const Modal = ({ showModal, onClose, images, buildingData }) => {
 
   return (
     <div className="body">
-      <img src={image} alt="Background" className="img" />
+      <div className="map-container">
+        <img src={image} alt="Background" className="img" />
 
-      {[1, 2, 3, 4, 5].map(indexOnMap => {
-        const buildingId = mapIndexToBuildingId[indexOnMap];
-        const building = buildings.find(b => b.id === buildingId);
-        return (
-          <img
-            key={indexOnMap}
-            src={imageMap[indexOnMap] || ''}
-            alt={building ? building.name : `Building ${indexOnMap}`}
-            className={`img${indexOnMap} ${selectedBuildingId === buildingId ? "highlighted" : ""}`}
-            onClick={() => handleImageClick(indexOnMap)}
-            style={{ cursor: 'pointer' }}
-          />
-        );
-      })}
+        {[1, 2, 3, 4, 5].map(indexOnMap => {
+          const buildingId = mapIndexToBuildingId[indexOnMap];
+          const building = buildings.find(b => b.id === buildingId);
+          return (
+            <img
+              key={indexOnMap}
+              src={imageMap[indexOnMap] || ''}
+              alt={building ? building.name : `Building ${indexOnMap}`}
+              className={`img${indexOnMap} ${selectedBuildingId === buildingId ? "highlighted" : ""}`}
+              onClick={() => handleImageClick(indexOnMap)}
+              style={{ cursor: 'pointer' }}
+            />
+          );
+        })}
 
-      
-    {/* Модальное окно */}
-    <Modal
-        showModal={showModal}
-        onClose={handleCloseModal}
-        images={selectedImages}
-        buildingData={selectedBuilding}
-      />
-
-
-
-      {/*Деревья*/}
-      <img src={image6} alt="" className="img6" />
-      <img src={image7} alt="" className="img7" />
-      <img src={image10} alt="" className="img10" />
-      <img src={image11} alt="" className="img11" />
-      <img src={image12} alt="" className="img12" />
-      <img src={image13} alt="" className="img13" />
-      <img src={image14} alt="" className="img14" />
-      <img src={image15} alt="" className="img15" />
-      <img src={image16} alt="" className="img16" />
-      <img src={image17} alt="" className="img17" />
-      <img src={image18} alt="" className="img18" />
-      <img src={image10} alt="" className="img30" />
-      <img src={image11} alt="" className="img31" />
-      <img src={image12} alt="" className="img32" />
-      <img src={image13} alt="" className="img33" />
-      <img src={image14} alt="" className="img34" />
-      <img src={image15} alt="" className="img39" />
-      <img src={image16} alt="" className="img36" />
-      <img src={image17} alt="" className="img37" />
-      <img src={image18} alt="" className="img38" />
-      <img src={image10} alt="" className="img40" />
-      <img src={image11} alt="" className="img41" />
-      <img src={image12} alt="" className="img42" />
-      <img src={image13} alt="" className="img43" />
-      <img src={image14} alt="" className="img44" />
-      <img src={image15} alt="" className="img45" />
-      <img src={image16} alt="" className="img46" />
-      <img src={image17} alt="" className="img47" />
-      <img src={image18} alt="" className="img48" />
-
+        
+        {/*Деревья*/}
+        <img src={image6} alt="" className="img6" />
+        <img src={image7} alt="" className="img7" />
+        <img src={image10} alt="" className="img10" />
+        <img src={image11} alt="" className="img11" />
+        <img src={image12} alt="" className="img12" />
+        <img src={image13} alt="" className="img13" />
+        <img src={image14} alt="" className="img14" />
+        <img src={image15} alt="" className="img15" />
+        <img src={image16} alt="" className="img16" />
+        <img src={image17} alt="" className="img17" />
+        <img src={image18} alt="" className="img18" />
+        <img src={image10} alt="" className="img30" />
+        <img src={image11} alt="" className="img31" />
+        <img src={image12} alt="" className="img32" />
+        <img src={image13} alt="" className="img33" />
+        <img src={image14} alt="" className="img34" />
+        <img src={image15} alt="" className="img39" />
+        <img src={image16} alt="" className="img36" />
+        <img src={image17} alt="" className="img37" />
+        <img src={image18} alt="" className="img38" />
+        <img src={image10} alt="" className="img40" />
+        <img src={image11} alt="" className="img41" />
+        <img src={image12} alt="" className="img42" />
+        <img src={image13} alt="" className="img43" />
+        <img src={image14} alt="" className="img44" />
+        <img src={image15} alt="" className="img45" />
+        <img src={image16} alt="" className="img46" />
+        <img src={image17} alt="" className="img47" />
+        <img src={image18} alt="" className="img48" />
         <img src={image11} alt="Дерево" className="img49"/>
- {/*      <img src={image11} alt="" className="img49" /> */}
-      <img src={image11} alt="" className="img50" />
-      <img src={image10} alt="" className="img51" />
-      <img src={image11} alt="" className="img52" />
-      <img src={image12} alt="" className="img53" />
-      <img src={image13} alt="" className="img54" />
-      <img src={image14} alt="" className="img55" />
-      <img src={image15} alt="" className="img56" />
-      <img src={image16} alt="" className="img57" />
-      <img src={image17} alt="" className="img58" />
-      <img src={image18} alt="" className="img59" />
-      <img src={image10} alt="" className="img60" />
+        <img src={image11} alt="" className="img50" />
+        <img src={image10} alt="" className="img51" />
+        <img src={image11} alt="" className="img52" />
+        <img src={image12} alt="" className="img53" />
+        <img src={image13} alt="" className="img54" />
+        <img src={image14} alt="" className="img55" />
+        <img src={image15} alt="" className="img56" />
+        <img src={image16} alt="" className="img57" />
+        <img src={image17} alt="" className="img58" />
+        <img src={image18} alt="" className="img59" />
+        <img src={image10} alt="" className="img60" />
+       </div>
+
+      {/* Модальное окно */}
+      <Modal
+          showModal={showModal}
+          onClose={handleCloseModal}
+          images={selectedImages}
+          buildingData={selectedBuilding}
+        />
     </div>
   );
 }

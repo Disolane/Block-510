@@ -1,429 +1,456 @@
+
+/* Пример перевода координат и размеров из px в % относительно 1700x1000 контейнера */
+/* Формула: left% = (left_px / 1420) * 100%, top% = (top_px / 850) * 100% */
+/* width% = (width_px / 1420) * 100%, height% = (height_px / 850) * 100% */
+
+
 .body {
   background-color: #B2B2B2;
-  /* цвет фона для 1 страницы*/
   width: 100%;
   height: 100vh;
-}
-
-/* Фон и изображения для второй страницы*/
-.fon1 {
-  background-color: #F8EBE2;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-/* деревья и дорога для 1-страницы*/
-.img {
-  width: 1420.62px;
-  height: 843px;
-  position: absolute;
-  left: 216.59px;
-  top: 165px;
-}
-
-.img1 {
-  width: 217px;
-  height: 149px;
-  position: absolute;
-  left: 400px;
-  top: 290px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  overflow: auto;
 }
 
 .highlighted {
   transform: scale(1.1);
-  filter: drop-shadow(0px 0px 15px rgba(0, 191, 255, 0.8));
+  filter: drop-shadow(0 0 15px rgba(0, 191, 255, 0.8));
   transform-origin: center center;
 }
 
-.img2 {
-  width: 219px;
-  height: 241px;
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1420px;
+  aspect-ratio: 1420 / 850;
+  overflow: visible;
+  
+  background-color: #F8EBE2; /* Потом убрать!! */
+  border: red solid 10px;  /* Потом убрать!! */
+
+}
+
+
+.img {
   position: absolute;
-  left: 604px;
-  top: 463.5px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+
+.img1 {
+  position: absolute;
+  z-index: 2;
+  left: 12.16%;    /* Примерно минус 16 от предыдущего */ 
+  top: 15.4%;       /* Примерно минус 19 от предыдущего */ 
+  width: 15.28%;
+  height: 17.67%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* .img1 {
+  position: absolute;
+  z-index: 2;
+  left: 28.16%;
+  top: 34.4%;
+  width: 15.28%;
+  height: 17.67%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+} */
+
+.img2 {
+  position: absolute;
+  z-index: 2;
+  left: 27.20%;
+  top: 34.98%;
+  width: 15.42%;
+  height: 28.59%;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img3 {
-  width: 217px;
-  height: 241px;
   position: absolute;
-  left: 856px;
-  top: 450px;
+  z-index: 2;
+  left: 44.26%;
+  top: 34.38%;
+  width: 15.28%;
+  height: 28.59%;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img4 {
-  width: 215px;
-  height: 241px;
   position: absolute;
-  left: 1115px;
-  top: 710px;
+  z-index: 2;
+  left: 62.49%;
+  top: 65.22%;
+  width: 15.13%;
+  height: 28.59%;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img5 {
-  width: 328px;
-  height: 209px;
   position: absolute;
-  left: 1416px;
-  top: 790px;
+  z-index: 2;
+  left: 85.67%;
+  top: 72.51%;
+  width: 23.09%;
+  height: 24.79%;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
+/* Далее деревья */
+
+  /*left отнимаем Примерно минус 16 от предыдущего */ 
+  /* top отнимаем Примерно минус 19 от предыдущего */ 
+
 .img6 {
-  width: 90.68px;
-  height: 100.39px;
   position: absolute;
-  left: 1092.29px;
-  top: 575.73px;
+  z-index: 2;
+  left: 76.89%;
+  top: 68.3%;
+  width: 6.38%;
+  height: 11.91%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img7 {
-  width: 54.55px;
-  height: 54.49px;
   position: absolute;
-  left: 1339.41px;
-  top: 740.44px;
+  z-index: 2;
+  left: 94.28%;
+  top: 87.83%;
+  width: 3.84%;
+  height: 6.46%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img10 {
-  width: 54.55px;
-  height: 54.49px;
   position: absolute;
-  left: 446.26px;
-  top: 767.91px;
+  z-index: 2;
+  left: 31.41%;
+  top: 91.09%;
+  width: 3.84%;
+  height: 6.46%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img11 {
-  width: 55.12px;
-  height: 107.12px;
   position: absolute;
-  left: 302.55px;
-  top: 626.66px;
+  left: 21.3%;
+  top: 74.38%;
+  width: 3.88%;
+  height: 12.71%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img12 {
-  width: 55.12px;
-  height: 95.08px;
   position: absolute;
-  left: 422.2px;
-  top: 638.7px;
+  z-index: 2;
+  left: 29.73%;
+  top: 75.78%;
+  width: 3.88%;
+  height: 11.28%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img13 {
-  width: 90.47px;
-  height: 127.65px;
   position: absolute;
-  left: 1369.63px;
-  top: 356.7px;
+  z-index: 2;
+  left: 96.42%;
+  top: 42.34%;
+  width: 6.37%;
+  height: 15.14%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img14 {
-  width: 90.47px;
-  height: 113.2px;
   position: absolute;
-  left: 1495.21px;
-  top: 371.15px;
+  z-index: 2;
+  left: 105.22%;
+  top: 44.04%;
+  width: 6.37%;
+  height: 13.43%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img15 {
-  width: 69.85px;
-  height: 80.77px;
   position: absolute;
-  left: 320.01px;
-  top: 915.28px;
+  z-index: 2;
+  left: 22.52%;
+  top: 108.6%;
+  width: 4.92%;
+  height: 9.58%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img16 {
-  width: 75.71px;
-  height: 97.59px;
   position: absolute;
-  left: 310px;
-  top: 820px;
+  z-index: 2;
+  left: 21.81%;
+  top: 97.3%;
+  width: 5.33%;
+  height: 11.58%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img17 {
-  width: 59.19px;
-  height: 71.25px;
   position: absolute;
-  left: 240px;
-  top: 938px;
+  z-index: 2;
+  left: 16.89%;
+  top: 111.3%;
+  width: 4.17%;
+  height: 8.46%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img18 {
-  width: 130.83px;
-  height: 127.43px;
   position: absolute;
-  left: 183.69px;
-  top: 800px;
+  z-index: 2;
+  left: 12.93%;
+  top: 94.93%;
+  width: 9.21%;
+  height: 15.12%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img19 {
-  width: 55.12px;
-  height: 107.12px;
   position: absolute;
-  left: 1060.22px;
-  top: 202px;
+  z-index: 2;
+  left: 74.6%;
+  top: 23.96%;
+  width: 3.88%;
+  height: 12.71%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img20 {
-  width: 90.47px;
-  height: 127.65px;
   position: absolute;
-  left: 181px;
-  top: 861px;
+  z-index: 2;
+  left: 12.74%;
+  top: 102.17%;
+  width: 6.37%;
+  height: 15.14%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .img21 {
-  width: 90.47px;
-  height: 113.2px;
   position: absolute;
-  left: 264.94px;
-  top: 859.04px;
+  z-index: 2;
+  left: 18.65%;
+  top: 101.89%;
+  width: 6.37%;
+  height: 13.43%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
-/* Модульное окно*/
-/* 
-.modal-overlay {
-  position: fixed; 
-  top: 0;
-  left: 0; 
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); 
-  display: flex;
-  justify-content: flex-start; 
-  z-index: 1000; 
-  transition: transform 0.3s ease; 
-}
-
-.modal-content {
-  background-color:#FFC5C5 ;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  padding: 20px;
-  width: 50%; 
-  border-radius:20px;
-  max-width: 498px;
- max-height:1200px;
-  z-index: 1001; 
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); 
-}
-
-.modal-images {
-  display: flex;
-  position: relative; 
-  flex-wrap: wrap;
-  justify-content: center;
-  width:498px;
-  height:320px;
-  border-radius:20px ;
-  left: -20px;
-  top:-30px;
-}
-.close-button {
-  color: #F8EBE2;
-  border: none;
-  padding: 2px 4px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-  display: block;
-  position: absolute; 
-  top: -8px;
-  right: 4px; 
-  z-index: 1002;
-} */
-
-
-/* Выподающий список с мероприятиями*/
-
-/* Деревья для 1-вой страницы*/
 .img30 {
   position: absolute;
-  top: 520px;
-  left: 270px;
+  z-index: 2;
+  left: 19.0%;
+  top: 61.68%;
 }
 
 .img31 {
   position: absolute;
-  top: 400px;
-  left: 340px;
+  z-index: 2;
+  left: 23.93%;
+  top: 47.47%;
 }
 
 .img32 {
   position: absolute;
-  top: 400px;
-  left: 230px;
+  z-index: 2;
+  left: 16.18%;
+  top: 47.47%;
 }
 
 .img33 {
   position: absolute;
-  top: 870px;
-  ;
-  left: 150px
+  z-index: 2;
+  left: 10.56%;
+  top: 103.22%;
 }
 
 .img34 {
   position: absolute;
-  top: 450px;
-  left: 160px;
-}
-
-.img39 {
-  position: absolute;
-  top: 490px;
-  left: 350px;
+  z-index: 2;
+  left: 11.27%;
+  top: 53.41%;
 }
 
 .img36 {
   position: absolute;
-  top: 490px;
-  left: 500px;
+  z-index: 2;
+  left: 35.19%;
+  top: 58.13%;
 }
 
 .img37 {
   position: absolute;
-  top: 870px;
-  left: 280px;
+  z-index: 2;
+  left: 19.71%;
+  top: 103.22%;
 }
 
 .img38 {
   position: absolute;
-  top: 820px;
-  left: 370px;
+  z-index: 2;
+  left: 26.04%;
+  top: 97.3%;
+}
+
+.img39 {
+  position: absolute;
+  z-index: 2;
+  left: 24.63%;
+  top: 58.13%;
 }
 
 .img40 {
   position: absolute;
-  top: 370px;
-  left: 620px;
+  z-index: 2;
+  left: 43.64%;
+  top: 43.89%;
 }
 
 .img41 {
   position: absolute;
-  top: 570px;
-  left: 180px;
-}
-
-.img49 {
-  position: absolute;
-  top: 150px;
-  left: 580px;
-}
-
-.img50 {
-  position: absolute;
-  top: 680px;
-  left: 160px;
-}
-
-.img48 {
-  position: absolute;
-  top: 410px;
-  left: 1410px;
+  z-index: 2;
+  left: 12.67%;
+  top: 67.62%;
 }
 
 .img42 {
   position: absolute;
-  top: 200px;
-  left: 1200px;
+  z-index: 2;
+  left: 84.48%;
+  top: 23.73%;
 }
 
 .img43 {
   position: absolute;
-  top: 321px;
-  left: 1435px;
+  z-index: 2;
+  left: 101.03%;
+  top: 38.07%;
 }
 
 .img44 {
   position: absolute;
-  top: 300px;
-  left: 1300px;
+  z-index: 2;
+  left: 91.52%;
+  top: 35.6%;
 }
 
 .img45 {
   position: absolute;
-  top: 400px;
-  left: 1400px;
+  z-index: 2;
+  left: 98.51%;
+  top: 47.47%;
 }
 
 .img46 {
   position: absolute;
-  top: 260px;
-  left: 1385px;
+  z-index: 2;
+  left: 97.48%;
+  top: 30.84%;
 }
 
 .img47 {
   position: absolute;
-  top: 230px;
-  left: 1330px;
+  z-index: 2;
+  left: 93.6%;
+  top: 27.28%;
+}
+
+.img48 {
+  position: absolute;
+  z-index: 2;
+  left: 99.3%;
+  top: 48.64%;
+}
+
+.img49 {
+  position: absolute;
+  z-index: 2;
+  left: 40.83%;
+  top: 17.8%;
+}
+
+.img50 {
+  position: absolute;
+  z-index: 2;
+  left: 11.27%;
+  top: 80.66%;
 }
 
 .img51 {
   position: absolute;
-  top: 380px;
-  left: 900px;
-}
-
-.img60 {
-  position: absolute;
-  top: 375px;
-  left: 1150px;
-  ;
+  z-index: 2;
+  left: 63.37%;
+  top: 45.08%;
 }
 
 .img52 {
   position: absolute;
-  top: 560px;
-  left: 1470px;
+  z-index: 2;
+  left: 103.44%;
+  top: 66.45%;
 }
 
 .img53 {
   position: absolute;
-  top: 670px;
-  left: 1560px;
-
+  z-index: 2;
+  left: 109.78%;
+  top: 79.52%;
 }
 
 .img54 {
   position: absolute;
-  top: 870px;
-  left: 900px;
+  z-index: 2;
+  left: 63.37%;
+  top: 103.22%;
 }
 
 .img55 {
   position: absolute;
-  top: 800px;
-  left: 1030px;
+  z-index: 2;
+  left: 72.51%;
+  top: 94.93%;
 }
 
 .img56 {
   position: absolute;
-  top: 700px;
-  left: 1030px;
+  z-index: 2;
+  left: 72.51%;
+  top: 83.05%;
 }
 
 .img57 {
   position: absolute;
-  top: 500px;
-  left: 1530px;
-
+  z-index: 2;
+  left: 107.68%;
+  top: 59.34%;
 }
 
 .img58 {
   position: absolute;
-  top: 600px;
-  left: 1630px;
+  z-index: 2;
+  left: 114.74%;
+  top: 71.2%;
 }
 
 .img59 {
   position: absolute;
-  top: 930px;
-  left: 1000px;
+  z-index: 2;
+  left: 70.4%;
+  top: 110.3%;
+}
 
+.img60 {
+  position: absolute;
+  z-index: 2;
+  left: 80.93%;
+  top: 44.49%;
 }
