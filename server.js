@@ -4,54 +4,54 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-origin: 'http://localhost:3000', 
-methods: ['GET', 'POST']
-  }));
+  origin: '*',
+  methods: ['GET', 'POST']
+}));
 app.use(express.json());
 
 // Создаем подключение к базе данных
 const db = new sqlite3.Database('./DB_Project.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
-    if (err) {
-        console.error('Ошибка подключения к базе данных: ' + err.message);
-    } else {
-        console.log('Подключение к базе данных успешно установлено.');
-    }
-    
+  if (err) {
+    console.error('Ошибка подключения к базе данных: ' + err.message);
+  } else {
+    console.log('Подключение к базе данных успешно установлено.');
+  }
+
 });
 
 // API для получения всех корпусов
 app.get('/api/buildings', (req, res) => {
-    db.all('SELECT * FROM Buildings', [], (err, rows) => {
-        if (err) {
-            res.status(500).json({ error: err.message });
-            return;
-        }
-        res.json(rows);
-    });
+  db.all('SELECT * FROM Buildings', [], (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(rows);
+  });
 });
 
 // API для получения конкретного корпуса по ID
 app.get('/api/buildings/:id', (req, res) => {
-    const id = req.params.id;
-    db.get('SELECT * FROM Buildings WHERE id = ?', [id], (err, row) => {
-        if (err) {
-            res.status(500).json({ error: err.message });
-            return;
-        }
-        res.json(row || {});
-    });
+  const id = req.params.id;
+  db.get('SELECT * FROM Buildings WHERE id = ?', [id], (err, row) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(row || {});
+  });
 });
 
 // Закрытие соединения при завершении процесса
 process.on('SIGINT', () => {
-    db.close((err) => {
-        if (err) {
-            console.error('Ошибка при закрытии базы данных:', err.message);
-        } else {
-            console.log('Подключение к базе данных закрыто');
-        }
-        process.exit(0);
-    });
+  db.close((err) => {
+    if (err) {
+      console.error('Ошибка при закрытии базы данных:', err.message);
+    } else {
+      console.log('Подключение к базе данных закрыто');
+    }
+    process.exit(0);
+  });
 });
 
 
@@ -59,9 +59,9 @@ process.on('SIGINT', () => {
 
 // API для получения информации о мероприятии по ID
 app.get('/api/events/:eventId', (req, res) => {
-    const eventId = req.params.eventId;
-  
-    const query = `
+  const eventId = req.params.eventId;
+
+  const query = `
       SELECT 
         e.ID as eventId, 
         e.NameOfTheEvent as eventName, 
@@ -85,40 +85,40 @@ app.get('/api/events/:eventId', (req, res) => {
         e.ID = ?
     `;
 
-    db.get(query, [eventId], (err, row) => {
-      if (err) {
-        console.error('Ошибка запроса:', err.message);
-        return res.status(500).json({ error: 'Ошибка сервера' });
-      }
-      if (!row) {
-        return res.status(404).json({ error: 'Мероприятие не найдено' });
-      }
-  
-      // Формируем объект с данными
-      const eventData = {
-        id: row.eventId,
-        title: row.eventName,
-        description: row.eventDescription,
-        image: row.eventImage, // Здесь нужно будет правильно формировать путь к изображению
-        cabinet: {
-          id: row.cabinetId,
-          name: row.cabinetName,
-          description: row.cabinetDescription,
-          floor: {
-            id: row.floorId,
-            name: row.floorName,
-            building: {
-              id: row.buildingId,
-              name: row.buildingName,
-              address: row.buildingAddress
-            }
+  db.get(query, [eventId], (err, row) => {
+    if (err) {
+      console.error('Ошибка запроса:', err.message);
+      return res.status(500).json({ error: 'Ошибка сервера' });
+    }
+    if (!row) {
+      return res.status(404).json({ error: 'Мероприятие не найдено' });
+    }
+
+    // Формируем объект с данными
+    const eventData = {
+      id: row.eventId,
+      title: row.eventName,
+      description: row.eventDescription,
+      image: row.eventImage, // Здесь нужно будет правильно формировать путь к изображению
+      cabinet: {
+        id: row.cabinetId,
+        name: row.cabinetName,
+        description: row.cabinetDescription,
+        floor: {
+          id: row.floorId,
+          name: row.floorName,
+          building: {
+            id: row.buildingId,
+            name: row.buildingName,
+            address: row.buildingAddress
           }
         }
-      };
-  
-      res.json(eventData);
-    });
+      }
+    };
+
+    res.json(eventData);
   });
+});
 
 
 app.get('/api/floors/:floorId', (req, res) => {
@@ -144,7 +144,7 @@ app.get('/api/floors/:floorId', (req, res) => {
 
 
 
-  // API для получения информации о корпусе по ID
+// API для получения информации о корпусе по ID
 app.get('/api/buildings/:buildingId', (req, res) => {
   const buildingId = req.params.buildingId;
 
@@ -230,6 +230,6 @@ app.get('/api/buildings/:buildingId/floors', (req, res) => {
 
 const PORT = 3001;
 app.listen(PORT, () => {
-    console.log(`Сервер запущен на порту ${PORT}`);
+  console.log(`Сервер запущен на порту ${PORT}`);
 });
 
